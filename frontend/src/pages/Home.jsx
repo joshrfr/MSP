@@ -20,8 +20,8 @@ const Home = () => {
     },
     {
       icon: TrendingUp,
-      title: 'Scalable Solutions',
-      description: 'From small office to enterprise scale - solutions that grow with your business'
+      title: 'On-Premises & Cloud Solutions',
+      description: 'We manage both on-premises hardware and cloud infrastructure - hybrid solutions that fit your needs'
     },
     {
       icon: DollarSign,
