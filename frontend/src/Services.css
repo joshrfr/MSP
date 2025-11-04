@@ -185,7 +185,7 @@
 
 /* Buttons */
 .btn-primary {
-  background: var(--brand-primary);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-warm) 100%);
   color: #000000;
   border: none;
   border-radius: 0;
@@ -203,9 +203,8 @@
 }
 
 .btn-primary:hover {
-  background: var(--brand-hover);
-  color: var(--brand-primary);
-  box-shadow: 0 0 30px rgba(135, 206, 235, 0.4);
+  background: linear-gradient(135deg, var(--brand-warm) 0%, var(--brand-primary) 100%);
+  box-shadow: 0 0 30px rgba(255, 155, 80, 0.5);
   transform: translateY(-2px);
 }
 
