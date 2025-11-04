@@ -1,5 +1,5 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
+import NetworkAnimation from '../components/NetworkAnimation';
 import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { metrics, residentialPlans } from '../mock';
