@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Spline from '@splinetool/react-spline';
+import NetworkAnimation from '../components/NetworkAnimation';
 import { ArrowRight, CheckCircle2, Zap, Clock, Heart, Shield } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import PricingSummary from '../components/PricingSummary';
