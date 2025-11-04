@@ -161,69 +161,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Residential Services */}
-      <section className="residential-section" id="residential">
-        <div className="residential-content">
+      {/* Service Links */}
+      <section className="service-links-section">
+        <div className="service-links-content">
           <div className="section-header">
-            <h2 className="section-title">Residential IT Services</h2>
+            <h2 className="section-title">Choose Your Service Type</h2>
             <p className="section-subtitle">
-              Professional IT support for your home - from basic helpdesk to complete smart home management
+              We provide specialized IT solutions for both homes and businesses
             </p>
           </div>
 
-          <div className="residential-plans-grid">
-            {residentialPlans.map((plan) => (
-              <div key={plan.id} className={`residential-plan-card ${plan.popular ? 'popular-plan' : ''}`}>
-                {plan.popular && <div className="popular-badge">Most Popular</div>}
-                
-                <h3 className="plan-name">{plan.name}</h3>
-                <div className="plan-price">{plan.price}<span>/mo</span></div>
-                <p className="plan-target">{plan.target}</p>
-                <p className="plan-description">{plan.description}</p>
+          <div className="service-types-grid">
+            <div className="service-type-card" onClick={() => navigate('/residential')}>
+              <h3>Residential IT Services</h3>
+              <p>Professional IT support for your home — from basic remote help to full concierge service</p>
+              <button className="btn-primary">
+                View Residential Plans
+                <ArrowRight size={20} />
+              </button>
+            </div>
 
-                <div className="plan-section">
-                  <h4 className="plan-section-title">Included</h4>
-                  <ul className="plan-list">
-                    {plan.inclusions.map((item, idx) => (
-                      <li key={idx}>
-                        <CheckCircle2 size={16} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="plan-section">
-                  <h4 className="plan-section-title">Security & Resilience</h4>
-                  <ul className="plan-list">
-                    {plan.security.map((item, idx) => (
-                      <li key={idx}>
-                        <Shield size={16} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="plan-details">
-                  <div className="plan-detail-item">
-                    <strong>SLA:</strong> {plan.sla}
-                  </div>
-                  <div className="plan-detail-item">
-                    <strong>Setup:</strong> {plan.onboarding}
-                  </div>
-                </div>
-
-                <button 
-                  className="btn-primary plan-cta" 
-                  onClick={() => window.open('tel:8506103889')}
-                  style={{ width: '100%', justifyContent: 'center' }}
-                >
-                  Get Started
-                  <ArrowRight size={20} />
-                </button>
-              </div>
-            ))}
+            <div className="service-type-card" onClick={() => navigate('/services')}>
+              <h3>Business IT Services</h3>
+              <p>Enterprise-grade managed services — build your custom IT solution from 16 professional services</p>
+              <button className="btn-primary">
+                Build Your Business Plan
+                <ArrowRight size={20} />
+              </button>
+            </div>
           </div>
         </div>
       </section>
