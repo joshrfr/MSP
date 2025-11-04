@@ -2,7 +2,7 @@ import React from 'react';
 import NetworkAnimation from '../components/NetworkAnimation';
 import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { metrics, residentialPlans } from '../mock';
+import { metrics } from '../mock';
 
 const Home = () => {
   const navigate = useNavigate();
