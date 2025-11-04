@@ -354,7 +354,7 @@
 .service-price {
   font-size: 24px;
   font-weight: 600;
-  color: var(--brand-primary);
+  color: var(--brand-warm);
   margin-bottom: 20px;
 }
 
