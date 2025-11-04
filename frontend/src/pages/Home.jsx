@@ -165,28 +165,28 @@ const Home = () => {
       </section>
 
       {/* Residential Services */}
-      <section className="residential-section\" id=\"residential\">
-        <div className=\"residential-content\">
-          <div className=\"section-header\">
-            <h2 className=\"section-title\">Residential IT Services</h2>
-            <p className=\"section-subtitle\">
+      <section className="residential-section" id="residential">
+        <div className="residential-content">
+          <div className="section-header">
+            <h2 className="section-title">Residential IT Services</h2>
+            <p className="section-subtitle">
               Professional IT support for your home - from basic helpdesk to complete smart home management
             </p>
           </div>
 
-          <div className=\"residential-plans-grid\">
+          <div className="residential-plans-grid">
             {residentialPlans.map((plan) => (
               <div key={plan.id} className={`residential-plan-card ${plan.popular ? 'popular-plan' : ''}`}>
-                {plan.popular && <div className=\"popular-badge\">Most Popular</div>}
+                {plan.popular && <div className="popular-badge">Most Popular</div>}
                 
-                <h3 className=\"plan-name\">{plan.name}</h3>
-                <div className=\"plan-price\">{plan.price}<span>/mo</span></div>
-                <p className=\"plan-target\">{plan.target}</p>
-                <p className=\"plan-description\">{plan.description}</p>
+                <h3 className="plan-name">{plan.name}</h3>
+                <div className="plan-price">{plan.price}<span>/mo</span></div>
+                <p className="plan-target">{plan.target}</p>
+                <p className="plan-description">{plan.description}</p>
 
-                <div className=\"plan-section\">
-                  <h4 className=\"plan-section-title\">Included</h4>
-                  <ul className=\"plan-list\">
+                <div className="plan-section">
+                  <h4 className="plan-section-title">Included</h4>
+                  <ul className="plan-list">
                     {plan.inclusions.map((item, idx) => (
                       <li key={idx}>
                         <CheckCircle2 size={16} />
@@ -196,9 +196,9 @@ const Home = () => {
                   </ul>
                 </div>
 
-                <div className=\"plan-section\">
-                  <h4 className=\"plan-section-title\">Security & Resilience</h4>
-                  <ul className=\"plan-list\">
+                <div className="plan-section">
+                  <h4 className="plan-section-title">Security & Resilience</h4>
+                  <ul className="plan-list">
                     {plan.security.map((item, idx) => (
                       <li key={idx}>
                         <Shield size={16} />
@@ -208,17 +208,17 @@ const Home = () => {
                   </ul>
                 </div>
 
-                <div className=\"plan-details\">
-                  <div className=\"plan-detail-item\">
+                <div className="plan-details">
+                  <div className="plan-detail-item">
                     <strong>SLA:</strong> {plan.sla}
                   </div>
-                  <div className=\"plan-detail-item\">
+                  <div className="plan-detail-item">
                     <strong>Setup:</strong> {plan.onboarding}
                   </div>
                 </div>
 
                 <button 
-                  className=\"btn-primary plan-cta\" 
+                  className="btn-primary plan-cta" 
                   onClick={() => window.open('tel:8506103889')}
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
@@ -232,7 +232,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className=\"why-choose-detailed-section\" id=\"why-choose\">
+      <section className="why-choose-detailed-section" id="why-choose">
         <div className="why-choose-detailed-content">
           <div className="section-header">
             <h2 className="section-title">Why Choose TopTier Technologies</h2>
