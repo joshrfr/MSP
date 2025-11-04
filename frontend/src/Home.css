@@ -185,6 +185,151 @@
   margin: 0 0 40px 0;
 }
 
+/* Residential Services Section */
+.residential-section {
+  padding: 100px 7.6923%;
+  background: rgba(255, 155, 80, 0.03);
+}
+
+.residential-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.residential-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.residential-plan-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.residential-plan-card:hover {
+  border-color: var(--brand-warm);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(255, 155, 80, 0.2);
+}
+
+.popular-plan {
+  border-color: var(--brand-warm);
+  background: rgba(255, 155, 80, 0.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: linear-gradient(135deg, var(--brand-warm) 0%, var(--brand-primary) 100%);
+  color: #000000;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-name {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.plan-price {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--brand-warm);
+  margin: 0 0 8px 0;
+}
+
+.plan-price span {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.plan-target {
+  font-size: 14px;
+  color: var(--brand-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+}
+
+.plan-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.plan-section {
+  margin-bottom: 24px;
+}
+
+.plan-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.plan-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.plan-list li svg {
+  color: var(--brand-warm);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.plan-details {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  margin-bottom: 24px;
+  border-left: 3px solid var(--brand-warm);
+}
+
+.plan-detail-item {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.plan-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.plan-detail-item strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.plan-cta {
+  margin-top: auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .features-grid {
@@ -192,6 +337,10 @@
   }
   
   .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .residential-plans-grid {
     grid-template-columns: 1fr;
   }
   
