@@ -185,6 +185,58 @@
   margin: 0 0 40px 0;
 }
 
+/* Service Links Section */
+.service-links-section {
+  padding: 100px 7.6923%;
+  background: rgba(255, 155, 80, 0.03);
+}
+
+.service-links-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.service-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.service-type-card {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-subtle);
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.service-type-card:hover {
+  border-color: var(--brand-warm);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(255, 155, 80, 0.3);
+}
+
+.service-type-card h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 20px 0;
+}
+
+.service-type-card p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.service-type-card .btn-primary {
+  margin: 0 auto;
+  display: inline-flex;
+}
+
 /* Residential Services Section */
 .residential-section {
   padding: 100px 7.6923%;
