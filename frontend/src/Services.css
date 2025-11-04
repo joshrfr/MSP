@@ -815,8 +815,9 @@
 }
 
 .footer-logo {
-  height: 40px;
+  height: 60px;
   margin-bottom: 16px;
+  filter: brightness(1.2);
 }
 
 .footer-description {
