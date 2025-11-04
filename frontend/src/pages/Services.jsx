@@ -97,7 +97,7 @@ const Services = () => {
           </div>
           
           <div className="hero-spline">
-            <Spline scene="https://prod.spline.design/P2ba0KHl7vT5qxq5/scene.splinecode" />
+            <NetworkAnimation />
           </div>
         </div>
         
