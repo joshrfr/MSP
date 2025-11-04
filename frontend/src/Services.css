@@ -57,12 +57,15 @@
 }
 
 .logo-container {
-  height: 50px;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .header-logo {
   height: 100%;
   object-fit: contain;
+  filter: brightness(1.2);
 }
 
 .header-nav {
