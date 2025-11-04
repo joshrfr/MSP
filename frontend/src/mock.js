@@ -202,65 +202,88 @@ export const residentialPlans = [
   {
     id: 'homecare-basic',
     name: 'HomeCare Basic',
-    price: '$79-$99',
-    target: 'Residential',
-    description: 'Essential remote IT support for your home',
+    priceMin: 89,
+    priceMax: 119,
+    priceDisplay: '$89-$119',
+    idealFor: 'Remote/home-office users who want professional IT support at home',
     inclusions: [
-      'Remote helpdesk 8×5',
-      'RMM/patching for 2 endpoints',
-      'Safe-browsing DNS',
-      'Quarterly health report'
+      'Remote helpdesk (8×5)',
+      'RMM + patching for 2 devices',
+      'Safe-browsing DNS + malware filtering',
+      'Quarterly system health report'
     ],
     security: [
       'Local restore assistance',
-      'Best-effort backup checks'
+      'Best-effort backup verification'
     ],
-    sla: 'P1 response: Next Business Day',
-    onboarding: '$49 one-time remote setup',
-    addons: ['MDR (+$18/user)', 'Email security (+$3-$5/user)', 'On-site visit (billed separately)']
+    sla: {
+      response: 'Next Business Day',
+      restore: 'Next Business Day'
+    },
+    onboarding: '$59 one-time remote setup',
+    addons: [
+      { name: 'Email Security', price: 5, unit: 'user' },
+      { name: 'Managed Wi-Fi', price: 10, unit: 'site' }
+    ],
+    upgradePath: 'HomeCare Plus'
   },
   {
     id: 'homecare-plus',
     name: 'HomeCare Plus',
-    price: '$149-$249',
-    target: 'Residential',
-    description: 'Complete home IT management with on-site support',
+    priceMin: 179,
+    priceMax: 279,
+    priceDisplay: '$179-$279',
+    idealFor: 'Families & home offices needing preventive care + on-site help',
     inclusions: [
       'Everything in Basic',
-      '1 on-site visit/month (up to 1 hr)',
-      'Endpoint backup',
+      '1 on-site visit / month (1 hr)',
+      'Endpoint backup w/ version history',
       'Annual PC tune-up'
     ],
     security: [
-      'Immutable backup for NAS/VMs',
-      'Semiannual test restore',
-      'Proxmox Backup support'
+      'Immutable backup option for NAS/VMs (Proxmox Backup)',
+      'Semi-annual test restore'
     ],
-    sla: 'P1 response: 4 Business Hours',
+    sla: {
+      response: '4 Business Hours',
+      restore: 'Same Day'
+    },
     onboarding: '$99 per household',
-    addons: ['MDR (+$18-$29/user)', 'Wi-Fi AP management (+$10/site)'],
+    addons: [
+      { name: 'MDR', price: 18, unit: 'device' },
+      { name: 'Wi-Fi AP management', price: 10, unit: 'site' }
+    ],
+    upgradePath: 'HomeCare Elite',
     popular: true
   },
   {
     id: 'homecare-elite',
     name: 'HomeCare Elite',
-    price: '$2,000-$3,000+',
-    target: 'Estates/MDUs',
-    description: 'White-glove concierge IT service for luxury homes',
+    priceMin: 899,
+    priceMax: 1799,
+    priceDisplay: '$899-$1,799',
+    idealFor: 'High-end homes & executives needing concierge-level care',
     inclusions: [
       'Concierge scheduling',
-      'Up to 8 on-site hours/month',
-      'Full home network management',
+      'Up to 8 on-site hrs / month',
+      'Full home network & IoT management',
       'AV/EDR protection',
-      'Camera/NVR management'
+      'Camera / NVR maintenance'
     ],
     security: [
       'Quarterly restore test',
       'Optional 24×7 alerting relay',
       'Priority incident response'
     ],
-    sla: 'P1 response: 1 hour (8×5)',
-    onboarding: '$499 per site',
-    addons: ['24×7 SOC relay (+$399/mo)', 'MDR (+$29/user)']
+    sla: {
+      response: '1 Hour (8×5)',
+      afterHours: 'By retainer'
+    },
+    onboarding: '$399 per site',
+    addons: [
+      { name: '24×7 SOC relay', price: 249, unit: 'site/mo' },
+      { name: 'Advanced MDR', price: 29, unit: 'device' }
+    ],
+    upgradePath: 'SMB Essential Business Plan'
   }
 ];
