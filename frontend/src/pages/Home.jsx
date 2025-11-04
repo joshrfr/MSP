@@ -78,12 +78,9 @@ const Home = () => {
             />
           </div>
           <nav className="header-nav">
-            <a href="#home" className="nav-link">Home</a>
-            <a href="#residential" className="nav-link">Residential</a>
-            <a href="#about" className="nav-link">Business Services</a>
-            <button className="btn-primary" onClick={() => navigate('/services')} style={{ padding: '12px 24px', minHeight: '48px' }}>
-              Build Your Plan
-            </button>
+            <a href="/" className="nav-link">Home</a>
+            <a href="/residential" className="nav-link">Residential</a>
+            <a href="/services" className="nav-link">Business Services</a>
           </nav>
         </div>
       </header>
