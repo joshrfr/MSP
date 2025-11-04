@@ -194,6 +194,73 @@ export const trustBadges = [
 export const metrics = [
   { label: '99.9%', sublabel: 'Uptime Guarantee', icon: 'Zap' },
   { label: '<15 min', sublabel: 'Response Time', icon: 'Clock' },
-  { label: '98%', sublabel: 'Client Satisfaction', icon: 'Heart' },
+  { label: '100%', sublabel: 'Client Satisfaction', icon: 'Heart' },
   { label: '24/7', sublabel: 'Support Available', icon: 'Shield' }
+];
+
+export const residentialPlans = [
+  {
+    id: 'homecare-basic',
+    name: 'HomeCare Basic',
+    price: '$79-$99',
+    target: 'Residential',
+    description: 'Essential remote IT support for your home',
+    inclusions: [
+      'Remote helpdesk 8×5',
+      'RMM/patching for 2 endpoints',
+      'Safe-browsing DNS',
+      'Quarterly health report'
+    ],
+    security: [
+      'Local restore assistance',
+      'Best-effort backup checks'
+    ],
+    sla: 'P1 response: Next Business Day',
+    onboarding: '$49 one-time remote setup',
+    addons: ['MDR (+$18/user)', 'Email security (+$3-$5/user)', 'On-site visit (billed separately)']
+  },
+  {
+    id: 'homecare-plus',
+    name: 'HomeCare Plus',
+    price: '$149-$249',
+    target: 'Residential',
+    description: 'Complete home IT management with on-site support',
+    inclusions: [
+      'Everything in Basic',
+      '1 on-site visit/month (up to 1 hr)',
+      'Endpoint backup',
+      'Annual PC tune-up'
+    ],
+    security: [
+      'Immutable backup for NAS/VMs',
+      'Semiannual test restore',
+      'Proxmox Backup support'
+    ],
+    sla: 'P1 response: 4 Business Hours',
+    onboarding: '$99 per household',
+    addons: ['MDR (+$18-$29/user)', 'Wi-Fi AP management (+$10/site)'],
+    popular: true
+  },
+  {
+    id: 'homecare-elite',
+    name: 'HomeCare Elite',
+    price: '$2,000-$3,000+',
+    target: 'Estates/MDUs',
+    description: 'White-glove concierge IT service for luxury homes',
+    inclusions: [
+      'Concierge scheduling',
+      'Up to 8 on-site hours/month',
+      'Full home network management',
+      'AV/EDR protection',
+      'Camera/NVR management'
+    ],
+    security: [
+      'Quarterly restore test',
+      'Optional 24×7 alerting relay',
+      'Priority incident response'
+    ],
+    sla: 'P1 response: 1 hour (8×5)',
+    onboarding: '$499 per site',
+    addons: ['24×7 SOC relay (+$399/mo)', 'MDR (+$29/user)']
+  }
 ];
