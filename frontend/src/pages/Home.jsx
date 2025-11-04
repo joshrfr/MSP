@@ -2,7 +2,7 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { metrics } from '../mock';
+import { metrics, residentialPlans } from '../mock';
 
 const Home = () => {
   const navigate = useNavigate();
