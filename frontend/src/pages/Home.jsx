@@ -153,6 +153,13 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Service Request Form */}
+      <section className="service-request-section">
+        <div className="container">
+          <ServiceRequestForm />
+        </div>
+      </section>
+
       {/* Service Links */}
       <section className="service-links-section">
         <div className="service-links-content">
