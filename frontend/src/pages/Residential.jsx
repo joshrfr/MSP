@@ -59,35 +59,21 @@ const Residential = () => {
   return (
     <div className="residential-page">
       {/* Header */}
-      <header className="services-header">
-        <div className="header-content">
-          <div className="logo-container" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-            <img
-              src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
-              alt="TopTier Technologies"
-              className="header-logo"
-            />
-          </div>
-          <nav className="header-nav">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/residential" className="nav-link active">Residential</a>
-            <a href="/services" className="nav-link">Business Services</a>
-            <button 
-              className="btn-secondary cart-button" 
-              onClick={() => setShowCart(!showCart)}
-              style={{ padding: '12px 24px', minHeight: '48px', position: 'relative' }}
-            >
-              <ShoppingCart size={20} />
-              {cart.length > 0 && (
-                <span className="cart-badge">{cart.length}</span>
-              )}
-            </button>
-          </nav>
-        </div>
-      </header>
+      <Navbar simple={true} />
+
+      {/* Cart Button - Floating */}
+      {cart.length > 0 && (
+        <button 
+          className="floating-cart-button" 
+          onClick={() => setShowCart(!showCart)}
+        >
+          <ShoppingCart size={24} />
+          <span className="cart-badge">{cart.length}</span>
+        </button>
+      )}
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section hero-compact">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
