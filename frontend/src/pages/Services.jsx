@@ -58,26 +58,11 @@ const Services = () => {
   return (
     <div className="services-page">
       {/* Header */}
-      <header className="services-header">
-        <div className="header-content">
-          <div className="logo-container" onClick={() => window.location.href = '/'} style={{ cursor: 'pointer' }}>
-            <img
-              src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
-              alt="TopTier Technologies"
-              className="header-logo"
-            />
-          </div>
-          <nav className="header-nav">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/#about" className="nav-link">About Us</a>
-            <a href="/#why-choose" className="nav-link">Why Choose Us</a>
-            <a href="#service-builder" className="nav-link">Build Your Plan</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar simple={false} />
+      <RacingBlueLight />
 
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section hero-compact">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
