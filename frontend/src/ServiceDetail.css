@@ -45,6 +45,12 @@
   overflow: hidden;
 }
 
+/* Compact hero for service detail pages */
+.service-hero-compact {
+  padding: 3rem 2rem 2rem;
+  min-height: auto;
+}
+
 .service-hero::before {
   content: '';
   position: absolute;
