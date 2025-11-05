@@ -83,6 +83,23 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class ContactRequest(BaseModel):
+    service_type: str
+    description: str
+    name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    phone: Optional[str] = None
+
+class PCBuildRequest(BaseModel):
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+    cpu_preference: str
+    ram: str
+    storage: str
+    use_case: str
+    budget: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
