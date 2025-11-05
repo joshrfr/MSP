@@ -71,22 +71,8 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Header */}
-      <header className="services-header">
-        <div className="header-content">
-          <div className="logo-container">
-            <img
-              src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
-              alt="TopTier Technologies"
-              className="header-logo"
-            />
-          </div>
-          <nav className="header-nav">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/residential" className="nav-link">Residential</a>
-            <a href="/services" className="nav-link">Business Services</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar simple={true} />
+      <RacingBlueLight />
 
       {/* Hero Section */}
       <section className="hero-section" id="home">
@@ -95,6 +81,9 @@ const Home = () => {
             <h1 className="hero-title">
               Your Trusted IT Partner Across Florida & Georgia
             </h1>
+            <p className="hero-tagline">
+              Quality at the Heart, Innovation Beyond Boundaries
+            </p>
             <p className="hero-subtitle">
               From cybersecurity to cloud solutions, we deliver enterprise-grade managed IT services with complete transparency. No hidden costs, no surprises — just reliable technology that powers your business.
             </p>
