@@ -1,0 +1,68 @@
+/* Racing Blue Light Animation */
+.racing-light-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.racing-light {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #87CEEB 20%,
+    #4682B4 50%,
+    #87CEEB 80%,
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 20px #87CEEB,
+    0 0 40px #4682B4,
+    0 0 60px #87CEEB;
+  animation: racingLight 3s linear infinite;
+}
+
+@keyframes racingLight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Horizontal racing light variant */
+.racing-light-horizontal {
+  width: 200px;
+  height: 100%;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #87CEEB 20%,
+    #4682B4 50%,
+    #87CEEB 80%,
+    transparent 100%
+  );
+  animation: racingLightVertical 4s linear infinite;
+}
+
+@keyframes racingLightVertical {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
