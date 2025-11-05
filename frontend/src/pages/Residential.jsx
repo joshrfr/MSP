@@ -309,6 +309,13 @@ const Residential = () => {
         </div>
       )}
 
+      {/* PC Build Form Section */}
+      <section className="pc-build-section">
+        <div className="container">
+          <PCBuildForm />
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="services-footer">
         <div className="footer-content">
