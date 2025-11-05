@@ -4,6 +4,57 @@
   background: var(--bg-primary);
   min-height: 100vh;
   color: var(--text-primary);
+  position: relative;
+}
+
+/* Floating Cart Button */
+.floating-cart-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4682B4, #87CEEB);
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(70, 130, 180, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floating-cart-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(70, 130, 180, 0.6);
+}
+
+.floating-cart-button .cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #FF4444;
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* PC Build Section */
+.pc-build-section {
+  padding: 60px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.pc-build-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Cart Button */
