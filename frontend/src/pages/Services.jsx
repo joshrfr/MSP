@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NetworkAnimation from '../components/NetworkAnimation';
+import RacingBlueLight from '../components/RacingBlueLight';
+import Navbar from '../components/Navbar';
 import { ArrowRight, CheckCircle2, Zap, Clock, Heart, Shield } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import PricingSummary from '../components/PricingSummary';
