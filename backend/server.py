@@ -30,6 +30,47 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Email configuration
+SMTP_HOST = os.environ.get('SMTP_HOST', 'smtppro.zoho.com')
+SMTP_PORT = int(os.environ.get('SMTP_PORT', 465))
+SMTP_USERNAME = os.environ.get('SMTP_USERNAME', '')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+SMTP_FROM_EMAIL = os.environ.get('SMTP_FROM_EMAIL', 'helpdesk@tttmsp.com')
+SMTP_FROM_NAME = os.environ.get('SMTP_FROM_NAME', 'TopTier Technologies')
+
+# Email sending function
+async def send_email(to_email: str, subject: str, body: str, attachment_data: bytes = None, attachment_name: str = None):
+    """Send email using Zoho SMTP"""
+    try:
+        message = MIMEMultipart()
+        message['From'] = f"{SMTP_FROM_NAME} <{SMTP_FROM_EMAIL}>"
+        message['To'] = to_email
+        message['Subject'] = subject
+        
+        message.attach(MIMEText(body, 'html'))
+        
+        # Add attachment if provided
+        if attachment_data and attachment_name:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(attachment_data)
+            encoders.encode_base64(part)
+            part.add_header('Content-Disposition', f'attachment; filename={attachment_name}')
+            message.attach(part)
+        
+        # Send email
+        if SMTP_PASSWORD:  # Only try to send if password is configured
+            async with aiosmtplib.SMTP(hostname=SMTP_HOST, port=SMTP_PORT, use_tls=True) as smtp:
+                await smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
+                await smtp.send_message(message)
+            logger.info(f"Email sent successfully to {to_email}")
+            return True
+        else:
+            logger.warning("SMTP password not configured. Email not sent.")
+            return False
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return False
+
 
 # Define Models
 class StatusCheck(BaseModel):
