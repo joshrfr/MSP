@@ -105,6 +105,112 @@ class PCBuildRequest(BaseModel):
 async def root():
     return {"message": "Hello World"}
 
+@api_router.post("/contact")
+async def submit_contact_request(
+    service_type: str = Form(...),
+    description: str = Form(...),
+    name: str = Form(None),
+    email: str = Form(None),
+    phone: str = Form(None),
+    file: UploadFile = File(None)
+):
+    """Handle service request form submissions"""
+    try:
+        # Prepare email body
+        email_body = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #4682B4;">New Service Request from Website</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                <p><strong>Service Type:</strong> {service_type}</p>
+                <p><strong>Description:</strong><br>{description}</p>
+                {f'<p><strong>Name:</strong> {name}</p>' if name else ''}
+                {f'<p><strong>Email:</strong> {email}</p>' if email else ''}
+                {f'<p><strong>Phone:</strong> {phone}</p>' if phone else ''}
+                <p><strong>Submitted:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}</p>
+            </div>
+        </body>
+        </html>
+        """
+        
+        # Handle file attachment
+        attachment_data = None
+        attachment_name = None
+        if file:
+            attachment_data = await file.read()
+            attachment_name = file.filename
+        
+        # Send email to helpdesk
+        await send_email(
+            to_email=SMTP_FROM_EMAIL,
+            subject=f"New {service_type} Service Request",
+            body=email_body,
+            attachment_data=attachment_data,
+            attachment_name=attachment_name
+        )
+        
+        # Store in database
+        contact_doc = {
+            "id": str(uuid.uuid4()),
+            "service_type": service_type,
+            "description": description,
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "has_attachment": file is not None,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        await db.contact_requests.insert_one(contact_doc)
+        
+        return {"success": True, "message": "Your request has been received — our team will follow up shortly."}
+    except Exception as e:
+        logger.error(f"Error processing contact request: {str(e)}")
+        return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
+
+@api_router.post("/pc-build-request")
+async def submit_pc_build_request(request: PCBuildRequest):
+    """Handle PC/Server build request submissions"""
+    try:
+        # Prepare email body
+        email_body = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #4682B4;">New PC/Server Build Request</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                <p><strong>Name:</strong> {request.name}</p>
+                <p><strong>Email:</strong> {request.email}</p>
+                {f'<p><strong>Phone:</strong> {request.phone}</p>' if request.phone else ''}
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3 style="color: #4682B4;">Build Specifications</h3>
+                <p><strong>CPU Preference:</strong> {request.cpu_preference}</p>
+                <p><strong>RAM:</strong> {request.ram}</p>
+                <p><strong>Storage:</strong> {request.storage}</p>
+                <p><strong>Use Case:</strong> {request.use_case}</p>
+                <p><strong>Budget:</strong> {request.budget}</p>
+                <p><strong>Submitted:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}</p>
+            </div>
+        </body>
+        </html>
+        """
+        
+        # Send email to helpdesk
+        await send_email(
+            to_email=SMTP_FROM_EMAIL,
+            subject=f"New PC/Server Build Request - {request.name}",
+            body=email_body
+        )
+        
+        # Store in database
+        build_doc = request.model_dump()
+        build_doc['id'] = str(uuid.uuid4())
+        build_doc['timestamp'] = datetime.now(timezone.utc).isoformat()
+        await db.pc_build_requests.insert_one(build_doc)
+        
+        return {"success": True, "message": "Your build request has been received. We'll send you a quote shortly!"}
+    except Exception as e:
+        logger.error(f"Error processing PC build request: {str(e)}")
+        return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
