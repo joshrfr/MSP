@@ -107,9 +107,9 @@
 }
 
 .form-message.success {
-  background: rgba(76, 175, 80, 0.2);
-  border: 1px solid rgba(76, 175, 80, 0.5);
-  color: #81c784;
+  background: rgba(70, 130, 180, 0.2);
+  border: 1px solid rgba(70, 130, 180, 0.5);
+  color: #87CEEB;
 }
 
 .form-message.error {
