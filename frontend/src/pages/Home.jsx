@@ -1,6 +1,9 @@
 import React from 'react';
 import NetworkAnimation from '../components/NetworkAnimation';
-import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp } from 'lucide-react';
+import RacingBlueLight from '../components/RacingBlueLight';
+import ServiceRequestForm from '../components/ServiceRequestForm';
+import Navbar from '../components/Navbar';
+import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { metrics } from '../mock';
 
