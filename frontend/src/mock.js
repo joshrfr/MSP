@@ -202,28 +202,29 @@ export const residentialPlans = [
   {
     id: 'homecare-basic',
     name: 'HomeCare Basic',
-    priceMin: 89,
-    priceMax: 119,
-    priceDisplay: '$89-$119',
+    priceMin: 50,
+    priceMax: 50,
+    priceDisplay: '$50/month',
     idealFor: 'Remote/home-office users who want professional IT support at home',
     inclusions: [
-      'Remote helpdesk (8×5)',
-      'RMM + patching for 2 devices',
-      'Safe-browsing DNS + malware filtering',
-      'Quarterly system health report'
+      '30 mins free remote support per month',
+      'Antivirus protection & updates',
+      'System monitoring & health checks',
+      '5GB cloud backup included',
+      'Email & phone support'
     ],
     security: [
-      'Local restore assistance',
-      'Best-effort backup verification'
+      'Basic malware protection',
+      'Monthly security updates'
     ],
     sla: {
       response: 'Next Business Day',
-      restore: 'Next Business Day'
+      restore: 'Best Effort'
     },
-    onboarding: '$59 one-time remote setup',
+    onboarding: '$49 one-time setup',
     addons: [
-      { name: 'Email Security', price: 5, unit: 'user' },
-      { name: 'Managed Wi-Fi', price: 10, unit: 'site' }
+      { name: 'Extra Support Hours', price: 45, unit: 'hour' },
+      { name: 'Additional Backup Storage', price: 10, unit: '10GB' }
     ],
     upgradePath: 'HomeCare Plus'
   },
