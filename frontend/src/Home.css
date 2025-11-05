@@ -4,6 +4,28 @@
   background: var(--bg-primary);
   min-height: 100vh;
   color: var(--text-primary);
+  position: relative;
+}
+
+/* Hero Tagline */
+.hero-tagline {
+  font-size: 1.5rem;
+  color: #87CEEB;
+  font-weight: 600;
+  font-style: italic;
+  margin: 1rem 0;
+  text-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
+}
+
+/* Service Request Section */
+.service-request-section {
+  padding: 60px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.service-request-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Features Section */
