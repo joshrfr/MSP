@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TrendingUp, Target, Briefcase, Users, FileText, Calendar } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import RacingBlueLight from '../components/RacingBlueLight';
 
 const StrategicServices = () => {
   const navigate = useNavigate();
@@ -8,22 +10,8 @@ const StrategicServices = () => {
   return (
     <div className="service-detail-page">
       {/* Header */}
-      <header className="services-header">
-        <div className="header-content">
-          <div className="logo-container" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
-            <img
-              src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
-              alt="TopTier Technologies"
-              className="header-logo"
-            />
-          </div>
-          <nav className="header-nav">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/residential" className="nav-link">Residential</a>
-            <a href="/services" className="nav-link">Business Services</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar simple={false} />
+      <RacingBlueLight />
 
       {/* Breadcrumb */}
       <div className="breadcrumb-container">
@@ -34,8 +22,8 @@ const StrategicServices = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="service-hero">
+      {/* Hero Section - Compact */}
+      <section className="service-hero service-hero-compact">
         <div className="container">
           <h1 className="service-hero-title">IT Strategy & Planning</h1>
           <p className="service-hero-subtitle">
@@ -248,11 +236,11 @@ const StrategicServices = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <p>Email: helpdesk@tttmsp.com</p>
-            <p>Phone: (555) 123-4567</p>
+            <p>Phone: (850) 610-3889</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2024 TopTier Technologies. All rights reserved.</p>
+          <p>© 2025 TopTier Technologies. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
