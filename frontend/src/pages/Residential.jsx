@@ -340,6 +340,10 @@ const Residential = () => {
             <ul className="footer-links">
               <li><a href="/residential">Residential Plans</a></li>
               <li><a href="/services">Business Services</a></li>
+              <li><a href="/strategic-services">Strategic Services</a></li>
+              <li><a href="/it-services">IT Services</a></li>
+              <li><a href="/cybersecurity">Cybersecurity</a></li>
+              <li><a href="/cloud-infrastructure">Cloud & Infrastructure</a></li>
             </ul>
           </div>
           
