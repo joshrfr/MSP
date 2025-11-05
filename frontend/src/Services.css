@@ -121,6 +121,12 @@
   overflow: hidden;
 }
 
+/* Compact hero for non-home pages */
+.hero-section.hero-compact {
+  min-height: 60vh;
+  padding: 80px 7.6923% 40px;
+}
+
 .hero-pattern {
   position: absolute;
   top: 0;
