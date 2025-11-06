@@ -310,7 +310,7 @@ const Home = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2025 TopTier Technologies. All rights reserved.</p>
+          <p>&copy; 2026 TopTier Technologies. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
