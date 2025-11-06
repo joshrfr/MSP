@@ -45,54 +45,26 @@ const HowItWorks = () => {
             const Icon = step.icon;
             return (
               <div key={index} style={{display: 'flex', gap: '2rem', alignItems: 'flex-start'}}>
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  borderRadius: '50%',
-                  background: 'rgba(135, 206, 235, 0.2)',
-                  border: '2px solid #87CEEB',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}>
-                  <Icon size={40} style={{color: '#87CEEB'}} />
+                <div className="cyber-step-number" style={{width: '80px', height: '80px'}}>
+                  <Icon size={40} />
                 </div>
                 <div style={{flex: 1}}>
-                  <h3 style={{color: '#87CEEB', fontSize: '1.8rem', marginBottom: '0.5rem'}}>{step.title}</h3>
-                  <p style={{color: '#e0e0e0', fontSize: '1.1rem', lineHeight: '1.8'}}>{step.description}</p>
+                  <h3 className="futuristic-title" style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>{step.title}</h3>
+                  <p className="cyber-subtitle" style={{fontSize: '1.1rem', lineHeight: '1.8'}}>{step.description}</p>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div style={{marginTop: '4rem', padding: '2rem', background: 'rgba(135, 206, 235, 0.1)', borderRadius: '12px', border: '1px solid rgba(135, 206, 235, 0.3)'}}>
-          <h3 style={{color: '#87CEEB', fontSize: '1.5rem', marginBottom: '1rem'}}>Still Have Questions?</h3>
-          <p style={{color: '#e0e0e0', marginBottom: '1.5rem'}}>We\'re here to help! Call us at (850) 610-3889 or browse our plans to get started.</p>
+        <div className="cyber-info-box" style={{marginTop: '4rem'}}>
+          <h3 className="futuristic-title" style={{fontSize: '1.5rem', marginBottom: '1rem'}}>Still Have Questions?</h3>
+          <p className="cyber-subtitle" style={{marginBottom: '1.5rem'}}>We\'re here to help! Call us at (850) 610-3889 or browse our plans to get started.</p>
           <div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
-            <button onClick={() => navigate('/residential#plans')} style={{
-              padding: '0.75rem 1.5rem',
-              background: '#87CEEB',
-              color: '#0a0a1f',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: '600',
-              cursor: 'pointer'
-            }}>
+            <button onClick={() => navigate('/residential#plans')} className="cyber-button" style={{padding: '0.75rem 1.5rem'}}>
               View Plans
             </button>
-            <button onClick={() => window.open('tel:8506103889')} style={{
-              padding: '0.75rem 1.5rem',
-              background: 'transparent',
-              color: '#87CEEB',
-              border: '2px solid #87CEEB',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: '600',
-              cursor: 'pointer'
-            }}>
+            <button onClick={() => window.open('tel:8506103889')} className="cyber-button-outline" style={{padding: '0.75rem 1.5rem'}}>
               Call Us
             </button>
           </div>
