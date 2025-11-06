@@ -35,12 +35,12 @@ const ResidentialServices = () => {
   ];
 
   return (
-    <div className="residential-services-page" style={{minHeight: '100vh', background: '#0a0a1f'}}>
+    <div className="residential-services-page">
       <Navbar type="residential" />
 
-      <section style={{padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto'}}>
-        <h1 style={{color: '#fff', fontSize: '3rem', textAlign: 'center', marginBottom: '1rem'}}>Our Services</h1>
-        <p style={{color: '#e0e0e0', fontSize: '1.2rem', textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem'}}>
+      <section className="cyber-section">
+        <h1 className="futuristic-title" style={{fontSize: '3rem', textAlign: 'center', marginBottom: '1rem'}}>Our Services</h1>
+        <p className="cyber-subtitle" style={{textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem'}}>
           Professional IT support and services designed specifically for home users
         </p>
 
