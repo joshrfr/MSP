@@ -7,6 +7,7 @@ import StrategicServices from './pages/StrategicServices';
 import ITServices from './pages/ITServices';
 import Cybersecurity from './pages/Cybersecurity';
 import CloudInfrastructure from './pages/CloudInfrastructure';
+import ITSolutions from './pages/ITSolutions';
 import './Services.css';
 import './Home.css';
 import './Residential.css';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/it-services" element={<ITServices />} />
           <Route path="/cybersecurity" element={<Cybersecurity />} />
           <Route path="/cloud-infrastructure" element={<CloudInfrastructure />} />
+          <Route path="/it-solutions" element={<ITSolutions />} />
         </Routes>
       </BrowserRouter>
     </div>
