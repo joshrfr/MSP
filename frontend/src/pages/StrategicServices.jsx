@@ -10,7 +10,7 @@ const StrategicServices = () => {
   return (
     <div className="service-detail-page">
       {/* Header */}
-      <Navbar simple={false} />
+      <Navbar type="business" />
       <RacingBlueLight />
 
       {/* Breadcrumb */}
