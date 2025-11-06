@@ -40,6 +40,16 @@ SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
 SMTP_FROM_EMAIL = os.environ.get('SMTP_FROM_EMAIL', 'helpdesk@tttmsp.com')
 SMTP_FROM_NAME = os.environ.get('SMTP_FROM_NAME', 'TopTier Technologies')
 
+# Stripe configuration
+STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY', '')
+
+# Define fixed residential plan packages (security: amounts defined on backend only)
+RESIDENTIAL_PLANS = {
+    "homecare_basic": {"name": "HomeCare Basic", "price_min": 50.00, "price_max": 80.00, "default": 65.00},
+    "homecare_plus": {"name": "HomeCare Plus", "price_min": 95.00, "price_max": 135.00, "default": 115.00},
+    "homecare_elite": {"name": "HomeCare Elite", "price_min": 155.00, "price_max": 179.00, "default": 167.00}
+}
+
 # Email sending function
 async def send_email(to_email: str, subject: str, body: str, attachment_data: bytes = None, attachment_name: str = None):
     """Send email using Zoho SMTP"""
