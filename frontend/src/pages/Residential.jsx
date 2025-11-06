@@ -59,7 +59,7 @@ const Residential = () => {
   return (
     <div className="residential-page">
       {/* Header */}
-      <Navbar simple={true} />
+      <Navbar type="residential" />
 
       {/* Cart Button - Floating */}
       {cart.length > 0 && (
