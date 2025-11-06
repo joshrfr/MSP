@@ -240,7 +240,7 @@ const StrategicServices = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 TopTier Technologies. All Rights Reserved.</p>
+          <p>© 2026 TopTier Technologies. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
