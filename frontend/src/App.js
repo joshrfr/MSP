@@ -12,6 +12,7 @@ import About from './pages/About';
 import HomeCareBasic from './pages/HomeCareBasic';
 import HomeCarePlus from './pages/HomeCarePlus';
 import HomeCareElite from './pages/HomeCareElite';
+import PaymentSuccess from './pages/PaymentSuccess';
 import './Services.css';
 import './Home.css';
 import './Residential.css';
