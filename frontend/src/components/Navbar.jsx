@@ -46,7 +46,10 @@ const Navbar = ({ type = 'home' }) => {
     return (
       <header className="navbar-header">
         <div className="navbar-content">
-          <div className="logo-container" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
+          <div className="logo-container" onClick={() => {
+            navigate('/');
+            window.scrollTo(0, 0);
+          }} style={{cursor: 'pointer'}}>
             <img
               src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
               alt="TopTier Technologies"
@@ -55,7 +58,10 @@ const Navbar = ({ type = 'home' }) => {
           </div>
           
           <nav className="navbar-nav">
-            <button onClick={() => navigate('/residential')} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
+            <button onClick={() => {
+              navigate('/');
+              window.scrollTo(0, 0);
+            }} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
             
             {/* Plans Dropdown */}
             <div 
@@ -75,7 +81,7 @@ const Navbar = ({ type = 'home' }) => {
               )}
             </div>
 
-            <a href="/residential/pc-builds" className="nav-link">Services</a>
+            <a href="/residential/services" className="nav-link">Services</a>
 
             {/* Support Dropdown */}
             <div 
@@ -88,9 +94,9 @@ const Navbar = ({ type = 'home' }) => {
               </button>
               {activeDropdown === 'support' && (
                 <div className="dropdown-menu">
-                  <a href="/residential#antivirus" className="dropdown-item">Antivirus & Monitoring</a>
-                  <a href="/residential#backup" className="dropdown-item">Backup Services</a>
-                  <a href="/residential#remote" className="dropdown-item">Remote Support</a>
+                  <a href="/residential/antivirus" className="dropdown-item">Antivirus & Monitoring</a>
+                  <a href="/residential/backup" className="dropdown-item">Backup Services</a>
+                  <a href="/residential/remote-support" className="dropdown-item">Remote Support</a>
                 </div>
               )}
             </div>
@@ -106,8 +112,8 @@ const Navbar = ({ type = 'home' }) => {
               </button>
               {activeDropdown === 'about' && (
                 <div className="dropdown-menu">
-                  <a href="/residential#about" className="dropdown-item">About TopTier</a>
-                  <a href="/residential#how-it-works" className="dropdown-item">How It Works</a>
+                  <a href="/residential/about" className="dropdown-item">About TopTier</a>
+                  <a href="/residential/how-it-works" className="dropdown-item">How It Works</a>
                 </div>
               )}
             </div>
