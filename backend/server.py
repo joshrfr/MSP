@@ -267,6 +267,228 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.post("/payments/checkout/session")
+async def create_checkout_session(request: CheckoutRequest, http_request: Request):
+    """Create a Stripe checkout session for residential plans"""
+    try:
+        # Validate plan_id
+        if request.plan_id not in RESIDENTIAL_PLANS:
+            raise HTTPException(status_code=400, detail="Invalid plan ID")
+        
+        plan = RESIDENTIAL_PLANS[request.plan_id]
+        amount = plan["default"]  # Use default price from backend (security: never trust frontend prices)
+        
+        # Build success and cancel URLs from provided origin
+        success_url = f"{request.origin_url}/payment/success?session_id={{CHECKOUT_SESSION_ID}}"
+        cancel_url = f"{request.origin_url}/residential"
+        
+        # Initialize Stripe checkout
+        host_url = str(http_request.base_url).rstrip('/')
+        webhook_url = f"{host_url}/api/webhook/stripe"
+        stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+        
+        # Create checkout session
+        checkout_request = CheckoutSessionRequest(
+            amount=amount,
+            currency="usd",
+            success_url=success_url,
+            cancel_url=cancel_url,
+            metadata={
+                "plan_id": request.plan_id,
+                "plan_name": plan["name"],
+                "user_email": request.user_email or "guest",
+                "user_name": request.user_name or "Guest User",
+                "source": "residential_plans"
+            }
+        )
+        
+        session: CheckoutSessionResponse = await stripe_checkout.create_checkout_session(checkout_request)
+        
+        # Create payment transaction record (MANDATORY before redirect)
+        transaction_doc = {
+            "id": str(uuid.uuid4()),
+            "session_id": session.session_id,
+            "plan_id": request.plan_id,
+            "plan_name": plan["name"],
+            "amount": amount,
+            "currency": "usd",
+            "payment_status": "pending",
+            "status": "initiated",
+            "user_email": request.user_email,
+            "user_name": request.user_name,
+            "metadata": {
+                "plan_id": request.plan_id,
+                "plan_name": plan["name"]
+            },
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "processed": False  # Flag to prevent double processing
+        }
+        await db.payment_transactions.insert_one(transaction_doc)
+        
+        logger.info(f"Checkout session created: {session.session_id} for plan {request.plan_id}")
+        
+        return {"url": session.url, "session_id": session.session_id}
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error creating checkout session: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create checkout session")
+
+@api_router.get("/payments/checkout/status/{session_id}")
+async def get_checkout_status(session_id: str, http_request: Request):
+    """Get the status of a checkout session"""
+    try:
+        # Initialize Stripe checkout
+        host_url = str(http_request.base_url).rstrip('/')
+        webhook_url = f"{host_url}/api/webhook/stripe"
+        stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+        
+        # Get status from Stripe
+        checkout_status: CheckoutStatusResponse = await stripe_checkout.get_checkout_status(session_id)
+        
+        # Check if we already processed this payment
+        existing_transaction = await db.payment_transactions.find_one(
+            {"session_id": session_id, "processed": True}
+        )
+        
+        if existing_transaction:
+            # Already processed, return cached status
+            return {
+                "status": existing_transaction.get("status"),
+                "payment_status": existing_transaction.get("payment_status"),
+                "amount_total": existing_transaction.get("amount"),
+                "currency": existing_transaction.get("currency"),
+                "metadata": existing_transaction.get("metadata", {}),
+                "already_processed": True
+            }
+        
+        # Update transaction in database if payment completed
+        if checkout_status.payment_status == "paid":
+            update_result = await db.payment_transactions.update_one(
+                {"session_id": session_id, "processed": False},
+                {
+                    "$set": {
+                        "payment_status": "paid",
+                        "status": "complete",
+                        "processed": True,
+                        "completed_at": datetime.now(timezone.utc).isoformat()
+                    }
+                }
+            )
+            
+            if update_result.modified_count > 0:
+                logger.info(f"Payment successful and processed for session {session_id}")
+                
+                # Send confirmation email
+                transaction = await db.payment_transactions.find_one({"session_id": session_id})
+                if transaction and transaction.get("user_email"):
+                    await send_payment_confirmation_email(transaction)
+        
+        elif checkout_status.status == "expired":
+            await db.payment_transactions.update_one(
+                {"session_id": session_id},
+                {
+                    "$set": {
+                        "payment_status": "failed",
+                        "status": "expired",
+                        "updated_at": datetime.now(timezone.utc).isoformat()
+                    }
+                }
+            )
+        
+        return {
+            "status": checkout_status.status,
+            "payment_status": checkout_status.payment_status,
+            "amount_total": checkout_status.amount_total / 100,  # Convert from cents
+            "currency": checkout_status.currency,
+            "metadata": checkout_status.metadata
+        }
+    
+    except Exception as e:
+        logger.error(f"Error getting checkout status: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get checkout status")
+
+@api_router.post("/webhook/stripe")
+async def stripe_webhook(request: Request):
+    """Handle Stripe webhooks"""
+    try:
+        # Get raw body and signature
+        body = await request.body()
+        signature = request.headers.get("Stripe-Signature")
+        
+        if not signature:
+            raise HTTPException(status_code=400, detail="Missing Stripe signature")
+        
+        # Initialize Stripe checkout
+        host_url = str(request.base_url).rstrip('/')
+        webhook_url = f"{host_url}/api/webhook/stripe"
+        stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+        
+        # Handle webhook
+        webhook_response = await stripe_checkout.handle_webhook(body, signature)
+        
+        logger.info(f"Webhook received: {webhook_response.event_type} for session {webhook_response.session_id}")
+        
+        # Update transaction based on webhook event
+        if webhook_response.event_type == "checkout.session.completed":
+            if webhook_response.payment_status == "paid":
+                update_result = await db.payment_transactions.update_one(
+                    {"session_id": webhook_response.session_id, "processed": False},
+                    {
+                        "$set": {
+                            "payment_status": "paid",
+                            "status": "complete",
+                            "processed": True,
+                            "completed_at": datetime.now(timezone.utc).isoformat()
+                        }
+                    }
+                )
+                
+                if update_result.modified_count > 0:
+                    logger.info(f"Payment webhook processed for session {webhook_response.session_id}")
+        
+        return {"received": True}
+    
+    except Exception as e:
+        logger.error(f"Webhook error: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+async def send_payment_confirmation_email(transaction: dict):
+    """Send payment confirmation email to customer"""
+    try:
+        email_body = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #87CEEB;">Payment Confirmation - TopTier Technologies</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                <p>Dear {transaction.get('user_name', 'Customer')},</p>
+                <p>Thank you for subscribing to <strong>{transaction.get('plan_name')}</strong>!</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3 style="color: #87CEEB;">Order Details</h3>
+                <p><strong>Plan:</strong> {transaction.get('plan_name')}</p>
+                <p><strong>Amount:</strong> ${transaction.get('amount'):.2f} USD/month</p>
+                <p><strong>Transaction ID:</strong> {transaction.get('session_id')}</p>
+                <p><strong>Date:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <p>Our team will be in touch within 24 hours to set up your service.</p>
+                <p>If you have any questions, please contact us at (850) 610-3889 or reply to this email.</p>
+                <p style="margin-top: 30px;">Best regards,<br><strong>The TopTier Technologies Team</strong></p>
+            </div>
+        </body>
+        </html>
+        """
+        
+        await send_email(
+            to_email=transaction.get('user_email'),
+            subject=f"Payment Confirmation - {transaction.get('plan_name')}",
+            body=email_body
+        )
+        
+        logger.info(f"Confirmation email sent to {transaction.get('user_email')}")
+    except Exception as e:
+        logger.error(f"Failed to send confirmation email: {str(e)}")
+
 # Include the router in the main app
 app.include_router(api_router)
 
