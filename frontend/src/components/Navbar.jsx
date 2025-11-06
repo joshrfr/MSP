@@ -132,7 +132,10 @@ const Navbar = ({ type = 'home' }) => {
   return (
     <header className="navbar-header">
       <div className="navbar-content">
-        <div className="logo-container" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
+        <div className="logo-container" onClick={() => {
+          navigate('/');
+          window.scrollTo(0, 0);
+        }} style={{cursor: 'pointer'}}>
           <img
             src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
             alt="TopTier Technologies"
@@ -141,7 +144,10 @@ const Navbar = ({ type = 'home' }) => {
         </div>
         
         <nav className="navbar-nav">
-          <button onClick={() => navigate('/services')} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
+          <button onClick={() => {
+            navigate('/');
+            window.scrollTo(0, 0);
+          }} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
           
           {/* Products & Services Dropdown */}
           <div 
