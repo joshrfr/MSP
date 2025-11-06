@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, Shield, ArrowRight, ShoppingCart, X, Plus, Minus } from 'lucide-react';
 import NetworkAnimation from '../components/NetworkAnimation';
 import Navbar from '../components/Navbar';
+import ServiceRequestForm from '../components/ServiceRequestForm';
 import PCBuildForm from '../components/PCBuildForm';
 import { residentialPlans } from '../mock';
 
