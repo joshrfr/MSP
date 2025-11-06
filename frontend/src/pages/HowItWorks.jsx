@@ -31,12 +31,12 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="how-it-works-page" style={{}}>
+    <div className="how-it-works-page">
       <Navbar type="residential" />
 
-      <section style={{padding: '6rem 2rem', maxWidth: '1000px', margin: '0 auto'}}>
-        <h1 style={{color: '#fff', fontSize: '3rem', textAlign: 'center', marginBottom: '1rem'}}>How It Works</h1>
-        <p style={{color: '#e0e0e0', fontSize: '1.2rem', textAlign: 'center', marginBottom: '4rem'}}>
+      <section className="cyber-section">
+        <h1 className="futuristic-title" style={{fontSize: '3rem', textAlign: 'center', marginBottom: '1rem'}}>How It Works</h1>
+        <p className="cyber-subtitle" style={{fontSize: '1.2rem', textAlign: 'center', marginBottom: '4rem'}}>
           Getting started with TopTier HomeCare is simple
         </p>
 
