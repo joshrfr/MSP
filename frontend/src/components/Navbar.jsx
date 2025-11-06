@@ -126,7 +126,7 @@ const Navbar = ({ type = 'home' }) => {
   return (
     <header className="navbar-header">
       <div className="navbar-content">
-        <div className="logo-container" onClick={() => navigate('/services')} style={{cursor: 'pointer'}}>
+        <div className="logo-container" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
           <img
             src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
             alt="TopTier Technologies"
