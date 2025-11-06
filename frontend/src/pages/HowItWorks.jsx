@@ -1,3 +1,4 @@
+import '../ResidentialTheme.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, MessageSquare, CheckCircle, Sparkles } from 'lucide-react';

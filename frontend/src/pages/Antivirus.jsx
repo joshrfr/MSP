@@ -1,3 +1,4 @@
+import '../ResidentialTheme.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Eye, AlertTriangle, CheckCircle } from 'lucide-react';
