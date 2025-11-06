@@ -874,6 +874,31 @@
   font-size: 14px;
 }
 
+/* Social Media Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(70, 130, 180, 0.1);
+  color: #87CEEB;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: rgba(70, 130, 180, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(70, 130, 180, 0.3);
+}
+
 /* Floating Action Button */
 .floating-action-container {
   position: fixed;
