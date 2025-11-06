@@ -317,6 +317,42 @@ const Residential = () => {
         </div>
       )}
 
+      {/* About Us Section */}
+      <section className="about-section" id="about">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose TopTier for Your Home?</h2>
+          </div>
+          <div className="about-grid">
+            <div className="about-card">
+              <h3>Innovation</h3>
+              <p>
+                Leveraging cutting-edge technologies, fostering creative collaboration, and providing tailored 
+                solutions that address evolving market needs and challenges. Optimizing infrastructure, ensuring 
+                seamless migration, and providing scalable and secure platforms for enhanced operational efficiency 
+                and flexibility.
+              </p>
+            </div>
+            <div className="about-card">
+              <h3>Hassle-Free IT</h3>
+              <p>
+                We handle all the technical complexities so you don't have to. From antivirus protection to system 
+                monitoring, backups to remote support — everything is managed for you. Focus on what matters while 
+                we keep your technology running smoothly.
+              </p>
+            </div>
+            <div className="about-card">
+              <h3>Local Support</h3>
+              <p>
+                Based in Florida and Georgia, we understand the unique needs of our community. With fast response 
+                times and personalized service, you're never just a ticket number. We're your neighbors, dedicated 
+                to keeping your home technology secure and efficient.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PC Build Form Section */}
       <section className="pc-build-section">
         <div className="container">
