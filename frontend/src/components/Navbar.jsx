@@ -55,7 +55,7 @@ const Navbar = ({ type = 'home' }) => {
           </div>
           
           <nav className="navbar-nav">
-            <a href="/residential" className="nav-link">Home</a>
+            <button onClick={() => navigate('/residential')} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
             
             {/* Plans Dropdown */}
             <div 
