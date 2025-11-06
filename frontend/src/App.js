@@ -42,6 +42,12 @@ function App() {
           <Route path="/residential/homecare-basic" element={<HomeCareBasic />} />
           <Route path="/residential/homecare-plus" element={<HomeCarePlus />} />
           <Route path="/residential/homecare-elite" element={<HomeCareElite />} />
+          <Route path="/residential/services" element={<ResidentialServices />} />
+          <Route path="/residential/about" element={<ResidentialAbout />} />
+          <Route path="/residential/how-it-works" element={<HowItWorks />} />
+          <Route path="/residential/antivirus" element={<Antivirus />} />
+          <Route path="/residential/backup" element={<BackupServices />} />
+          <Route path="/residential/remote-support" element={<RemoteSupport />} />
           <Route path="/payment/success" element={<PaymentSuccess />} />
         </Routes>
       </BrowserRouter>
