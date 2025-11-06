@@ -319,8 +319,8 @@ const Home = () => {
           <div className="footer-section">
             <h4 className="footer-heading">Contact</h4>
             <ul className="footer-links">
-              <li>(850) 610-3889</li>
-              <li>info@toptiertech.com</li>
+              <li><a href="tel:8506103889">(850) 610-3889</a></li>
+              <li><a href="mailto:helpdesk@tttmsp.com">helpdesk@tttmsp.com</a></li>
               <li>24/7 Support Available</li>
             </ul>
           </div>
