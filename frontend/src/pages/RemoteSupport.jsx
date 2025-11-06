@@ -8,7 +8,7 @@ const RemoteSupport = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="remote-support-page" style={{minHeight: '100vh', background: '#0a0a1f'}}>
+    <div className="remote-support-page" style={{}}>
       <Navbar type="residential" />
 
       <section style={{padding: '6rem 2rem', maxWidth: '1000px', margin: '0 auto'}}>

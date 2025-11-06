@@ -31,7 +31,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="how-it-works-page" style={{minHeight: '100vh', background: '#0a0a1f'}}>
+    <div className="how-it-works-page" style={{}}>
       <Navbar type="residential" />
 
       <section style={{padding: '6rem 2rem', maxWidth: '1000px', margin: '0 auto'}}>
