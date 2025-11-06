@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import ServiceRequestForm from '../components/ServiceRequestForm';
 import PCBuildForm from '../components/PCBuildForm';
 import { residentialPlans } from '../mock';
+import { initiateCheckout } from '../utils/payment';
 
 const Residential = () => {
   const navigate = useNavigate();
