@@ -58,7 +58,7 @@ const Services = () => {
   return (
     <div className="services-page">
       {/* Header */}
-      <Navbar simple={false} />
+      <Navbar type="business" />
       <RacingBlueLight />
 
       {/* Hero Section */}
