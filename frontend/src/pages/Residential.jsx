@@ -375,29 +375,27 @@ const Residential = () => {
           </div>
           
           <div className="footer-section">
-            <h4 className="footer-heading">Services</h4>
+            <h4 className="footer-heading">Residential Services</h4>
             <ul className="footer-links">
-              <li><a href="/residential">Residential Plans</a></li>
-              <li><a href="/services">Business Services</a></li>
-              <li><a href="/strategic-services">Strategic Services</a></li>
-              <li><a href="/it-services">IT Services</a></li>
-              <li><a href="/cybersecurity">Cybersecurity</a></li>
-              <li><a href="/cloud-infrastructure">Cloud & Infrastructure</a></li>
+              <li><a href="/residential/homecare-basic">HomeCare Basic</a></li>
+              <li><a href="/residential/homecare-plus">HomeCare Plus</a></li>
+              <li><a href="/residential/homecare-elite">HomeCare Elite</a></li>
+              <li><a href="/residential/pc-builds">Custom PC & Server Builds</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4 className="footer-heading">Contact</h4>
             <ul className="footer-links">
-              <li>(850) 610-3889</li>
-              <li>info@toptiertech.com</li>
+              <li><a href="tel:8506103889">(850) 610-3889</a></li>
+              <li><a href="mailto:helpdesk@tttmsp.com">helpdesk@tttmsp.com</a></li>
               <li>24/7 Support Available</li>
             </ul>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2025 TopTier Technologies. All rights reserved.</p>
+          <p>&copy; 2026 TopTier Technologies. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
