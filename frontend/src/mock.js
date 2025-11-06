@@ -203,8 +203,8 @@ export const residentialPlans = [
     id: 'homecare-basic',
     name: 'HomeCare Basic',
     priceMin: 50,
-    priceMax: 50,
-    priceDisplay: '$50/month',
+    priceMax: 179,
+    priceDisplay: '$50-$179',
     idealFor: 'Remote/home-office users who want professional IT support at home',
     inclusions: [
       '30 mins free remote support per month',
