@@ -44,31 +44,17 @@ const ResidentialServices = () => {
           Professional IT support and services designed specifically for home users
         </p>
 
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
+        <div className="cyber-grid">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} style={{
-                background: 'rgba(135, 206, 235, 0.05)',
-                padding: '2rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(135, 206, 235, 0.2)',
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}
+              <div key={index} className="cyber-card"
               onClick={() => navigate(service.link)}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#87CEEB';
-                e.currentTarget.style.transform = 'translateY(-5px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(135, 206, 235, 0.2)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}>
-                <Icon size={48} style={{color: '#87CEEB', marginBottom: '1rem'}} />
-                <h3 style={{color: '#fff', fontSize: '1.5rem', marginBottom: '1rem'}}>{service.title}</h3>
-                <p style={{color: '#e0e0e0', marginBottom: '1rem'}}>{service.description}</p>
-                <div style={{color: '#87CEEB', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+              style={{cursor: 'pointer'}}>
+                <Icon size={48} className="cyber-icon" style={{marginBottom: '1rem'}} />
+                <h3 className="futuristic-title" style={{fontSize: '1.5rem', marginBottom: '1rem'}}>{service.title}</h3>
+                <p className="cyber-subtitle" style={{marginBottom: '1rem'}}>{service.description}</p>
+                <div style={{color: 'var(--cyber-cyan)', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
                   Learn More <ArrowRight size={20} />
                 </div>
               </div>
@@ -77,16 +63,7 @@ const ResidentialServices = () => {
         </div>
 
         <div style={{textAlign: 'center', marginTop: '4rem'}}>
-          <button onClick={() => navigate('/residential#plans')} style={{
-            padding: '1rem 2rem',
-            background: '#87CEEB',
-            color: '#0a0a1f',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            cursor: 'pointer'
-          }}>
+          <button onClick={() => navigate('/residential#plans')} className="cyber-button">
             View Our Plans
           </button>
         </div>
