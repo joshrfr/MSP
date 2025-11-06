@@ -195,9 +195,27 @@ const Navbar = ({ type = 'home' }) => {
             </button>
             {activeDropdown === 'about' && (
               <div className="dropdown-menu">
-                <a href="/about" className="dropdown-item">About TopTier</a>
-                <a href="/about#mission" className="dropdown-item">Mission & Vision</a>
-                <a href="/about#partners" className="dropdown-item">Partners & Certifications</a>
+                <a href="/about" className="dropdown-item" onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/about');
+                  window.scrollTo(0, 0);
+                }}>About TopTier</a>
+                <a href="/about#mission" className="dropdown-item" onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/about');
+                  setTimeout(() => {
+                    const element = document.getElementById('mission');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}>Mission & Vision</a>
+                <a href="/about#partners" className="dropdown-item" onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/about');
+                  setTimeout(() => {
+                    const element = document.getElementById('partners');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}>Partners & Certifications</a>
               </div>
             )}
           </div>
