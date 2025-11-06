@@ -169,9 +169,17 @@ const Residential = () => {
 
                 <button 
                   className="btn-primary plan-select"
-                  onClick={() => addToCart(plan)}
+                  onClick={() => {
+                    // Map plan ID to backend plan_id format
+                    const planIdMap = {
+                      'homecare-basic': 'homecare_basic',
+                      'homecare-plus': 'homecare_plus',
+                      'homecare-elite': 'homecare_elite'
+                    };
+                    initiateCheckout(planIdMap[plan.id] || plan.id);
+                  }}
                 >
-                  Select Plan
+                  Subscribe Now
                   <ArrowRight size={20} />
                 </button>
 
