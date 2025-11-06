@@ -71,7 +71,7 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Header */}
-      <Navbar simple={true} />
+      <Navbar type="home" />
       <RacingBlueLight />
 
       {/* Hero Section */}
