@@ -8,6 +8,10 @@ import ITServices from './pages/ITServices';
 import Cybersecurity from './pages/Cybersecurity';
 import CloudInfrastructure from './pages/CloudInfrastructure';
 import ITSolutions from './pages/ITSolutions';
+import About from './pages/About';
+import HomeCareBasic from './pages/HomeCareBasic';
+import HomeCarePlus from './pages/HomeCarePlus';
+import HomeCareElite from './pages/HomeCareElite';
 import './Services.css';
 import './Home.css';
 import './Residential.css';
@@ -27,6 +31,10 @@ function App() {
           <Route path="/cybersecurity" element={<Cybersecurity />} />
           <Route path="/cloud-infrastructure" element={<CloudInfrastructure />} />
           <Route path="/it-solutions" element={<ITSolutions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/residential/homecare-basic" element={<HomeCareBasic />} />
+          <Route path="/residential/homecare-plus" element={<HomeCarePlus />} />
+          <Route path="/residential/homecare-elite" element={<HomeCareElite />} />
         </Routes>
       </BrowserRouter>
     </div>
