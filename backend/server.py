@@ -112,6 +112,26 @@ class PCBuildRequest(BaseModel):
     use_case: str
     budget: str
 
+class CheckoutRequest(BaseModel):
+    plan_id: str
+    origin_url: str
+    user_email: Optional[str] = None
+    user_name: Optional[str] = None
+
+class PaymentTransaction(BaseModel):
+    id: str
+    session_id: str
+    plan_id: str
+    plan_name: str
+    amount: float
+    currency: str
+    payment_status: str
+    status: str
+    user_email: Optional[str] = None
+    user_name: Optional[str] = None
+    metadata: Dict[str, str]
+    timestamp: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
