@@ -36,6 +36,7 @@ function App() {
           <Route path="/residential/homecare-basic" element={<HomeCareBasic />} />
           <Route path="/residential/homecare-plus" element={<HomeCarePlus />} />
           <Route path="/residential/homecare-elite" element={<HomeCareElite />} />
+          <Route path="/payment/success" element={<PaymentSuccess />} />
         </Routes>
       </BrowserRouter>
     </div>
