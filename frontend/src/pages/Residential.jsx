@@ -93,6 +93,13 @@ const Residential = () => {
         <div className="hero-pattern" />
       </section>
 
+      {/* Service Request Form */}
+      <section className="service-request-section">
+        <div className="container">
+          <ServiceRequestForm />
+        </div>
+      </section>
+
       {/* Plans Section */}
       <section className="residential-plans-section">
         <div className="plans-container">
