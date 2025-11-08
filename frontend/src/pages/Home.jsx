@@ -101,7 +101,7 @@ const Home = () => {
           </div>
           
           <div className="hero-spline">
-            <NetworkAnimation />
+            <TechnicianAnimation />
           </div>
         </div>
         
