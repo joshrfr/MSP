@@ -69,6 +69,8 @@ const ResidentialServices = () => {
           </button>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };
