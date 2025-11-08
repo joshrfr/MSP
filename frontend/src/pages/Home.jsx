@@ -1,5 +1,5 @@
 import React from 'react';
-import NetworkAnimation from '../components/NetworkAnimation';
+import TechnicianAnimation from '../components/TechnicianAnimation';
 import RacingBlueLight from '../components/RacingBlueLight';
 import ServiceRequestForm from '../components/ServiceRequestForm';
 import Navbar from '../components/Navbar';
