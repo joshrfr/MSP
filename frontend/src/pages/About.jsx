@@ -101,9 +101,9 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="service-content" style={{background: 'rgba(135, 206, 235, 0.05)'}}>
+      <section className="service-content">
         <div className="container">
-          <div className="section-header" style={{textAlign: 'center', marginBottom: '3rem'}}>
+          <div className="section-header">
             <h2 className="section-title">Our Core Values</h2>
             <p className="section-subtitle">
               These principles guide everything we do
