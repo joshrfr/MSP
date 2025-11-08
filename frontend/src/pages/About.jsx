@@ -4,6 +4,7 @@ import { Award, Users, Target, TrendingUp, Shield, Heart } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import BusinessFooter from '../components/BusinessFooter';
 import RacingBlueLight from '../components/RacingBlueLight';
+import './About.css';
 
 const About = () => {
   const navigate = useNavigate();
