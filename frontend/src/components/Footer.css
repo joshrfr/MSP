@@ -204,8 +204,16 @@
     padding: 2rem 1.5rem 1rem;
   }
   
+  .footer-brand {
+    padding-bottom: 1.5rem;
+  }
+  
+  .footer-logo {
+    height: 40px;
+  }
+  
   .footer-container {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .footer-section:not(.footer-brand) {
@@ -221,7 +229,11 @@
   }
   
   .footer-bottom {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-top: 1rem;
+  }
+  
+  .footer-description {
+    font-size: 0.9rem;
   }
 }
