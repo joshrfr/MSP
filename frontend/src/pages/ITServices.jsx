@@ -1,29 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Server, Headphones, Clock, Shield, Wrench, Monitor } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import RacingBlueLight from '../components/RacingBlueLight';
 
 const ITServices = () => {
   const navigate = useNavigate();
 
   return (
     <div className="service-detail-page">
-      {/* Header */}
-      <header className="services-header">
-        <div className="header-content">
-          <div className="logo-container" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
-            <img
-              src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
-              alt="TopTier Technologies"
-              className="header-logo"
-            />
-          </div>
-          <nav className="header-nav">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/residential" className="nav-link">Residential</a>
-            <a href="/services" className="nav-link">Business Services</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar type="business" />
+      <RacingBlueLight />
 
       {/* Breadcrumb */}
       <div className="breadcrumb-container">
