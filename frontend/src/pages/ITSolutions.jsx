@@ -121,29 +121,8 @@ const ITSolutions = () => {
       </section>
 
       {/* Footer */}
-      <footer className="services-footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>TopTier Technologies</h3>
-            <p>Your trusted IT partner across Florida & Georgia</p>
-          </div>
-          <div className="footer-section">
-            <h4>Services</h4>
-            <a href="/strategic-services">Strategic Services</a>
-            <a href="/it-services">IT Services</a>
-            <a href="/cybersecurity">Cybersecurity</a>
-            <a href="/cloud-infrastructure">Cloud Services</a>
-          </div>
-          <div className="footer-section">
-            <h4>Contact</h4>
-            <p>Email: helpdesk@tttmsp.com</p>
-            <p>Phone: (850) 610-3889</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2026 TopTier Technologies. All Rights Reserved.</p>
-        </div>
-      </footer>
+      <BusinessFooter />
+      
     </div>
   );
 };
