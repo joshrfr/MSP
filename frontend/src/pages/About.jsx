@@ -152,27 +152,22 @@ const About = () => {
 
           <div className="content-block highlight-block">
             <h2 className="content-title">Why Businesses Choose TopTier</h2>
-            <div className="stats-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem',
-              marginTop: '2rem'
-            }}>
-              <div style={{textAlign: 'center'}}>
-                <div style={{fontSize: '3rem', fontWeight: 'bold', color: '#87CEEB'}}>500+</div>
-                <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Successful Implementations</p>
+            <div className="stats-grid">
+              <div>
+                <div className="stat-number">500+</div>
+                <p className="stat-label">Successful Implementations</p>
               </div>
-              <div style={{textAlign: 'center'}}>
-                <div style={{fontSize: '3rem', fontWeight: 'bold', color: '#87CEEB'}}>15min</div>
-                <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Average Response Time</p>
+              <div>
+                <div className="stat-number">15min</div>
+                <p className="stat-label">Average Response Time</p>
               </div>
-              <div style={{textAlign: 'center'}}>
-                <div style={{fontSize: '3rem', fontWeight: 'bold', color: '#87CEEB'}}>24/7</div>
-                <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Monitoring & Support</p>
+              <div>
+                <div className="stat-number">24/7</div>
+                <p className="stat-label">Monitoring & Support</p>
               </div>
-              <div style={{textAlign: 'center'}}>
-                <div style={{fontSize: '3rem', fontWeight: 'bold', color: '#87CEEB'}}>7+ yrs</div>
-                <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Average Client Relationship</p>
+              <div>
+                <div className="stat-number">7+ yrs</div>
+                <p className="stat-label">Average Client Relationship</p>
               </div>
             </div>
           </div>
