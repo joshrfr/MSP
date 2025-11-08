@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TrendingUp, Target, Briefcase, Users, FileText, Calendar } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import BusinessFooter from '../components/BusinessFooter';
 import RacingBlueLight from '../components/RacingBlueLight';
 
 const StrategicServices = () => {
