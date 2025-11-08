@@ -53,6 +53,8 @@ const ResidentialAbout = () => {
           </button>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };
