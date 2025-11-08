@@ -140,21 +140,11 @@ const About = () => {
               commitment to technical excellence and continuous improvement.
             </p>
             
-            <div className="partners-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '1.5rem',
-              marginTop: '2rem'
-            }}>
+            <div className="partners-grid">
               {partners.map((partner, index) => (
-                <div key={index} style={{
-                  background: 'rgba(135, 206, 235, 0.1)',
-                  padding: '1.5rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(135, 206, 235, 0.3)'
-                }}>
-                  <h3 style={{color: '#87CEEB', fontSize: '1.25rem', marginBottom: '0.5rem'}}>{partner.name}</h3>
-                  <p style={{color: '#e0e0e0', fontSize: '0.95rem'}}>{partner.certification}</p>
+                <div key={index} className="partner-card">
+                  <h3>{partner.name}</h3>
+                  <p>{partner.certification}</p>
                 </div>
               ))}
             </div>
