@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Eye, AlertTriangle, CheckCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import ResidentialFooter from '../components/ResidentialFooter';
 
 const Antivirus = () => {
   const navigate = useNavigate();

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart, Users, Shield, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import ResidentialFooter from '../components/ResidentialFooter';
 import '../ResidentialTheme.css';
 
 const ResidentialAbout = () => {

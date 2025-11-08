@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, MessageSquare, CheckCircle, Sparkles } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import ResidentialFooter from '../components/ResidentialFooter';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
