@@ -68,6 +68,8 @@ const Antivirus = () => {
           </button>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };

@@ -131,6 +131,8 @@ const RemoteSupport = () => {
           </button>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };

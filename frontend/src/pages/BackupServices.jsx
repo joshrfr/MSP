@@ -71,6 +71,8 @@ const BackupServices = () => {
           </button>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };

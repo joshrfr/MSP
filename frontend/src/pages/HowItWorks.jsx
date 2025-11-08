@@ -71,6 +71,8 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
+      
+      <ResidentialFooter />
     </div>
   );
 };

@@ -329,6 +329,8 @@ const HomeCareElite = () => {
           <p>&copy; 2026 TopTier Technologies. All Rights Reserved.</p>
         </div>
       </footer>
+      
+      <ResidentialFooter />
     </div>
   );
 };
