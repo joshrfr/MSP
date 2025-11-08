@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Monitor, HardDrive, Headphones, Wrench, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import ResidentialFooter from '../components/ResidentialFooter';
 import '../ResidentialTheme.css';
 
 const ResidentialServices = () => {
