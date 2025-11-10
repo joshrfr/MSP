@@ -5,8 +5,8 @@
 /* Root Variables */
 :root {
   /* Backgrounds */
-  --bg-primary: #000000;
-  --bg-secondary: #121212;
+  --bg-primary: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+  --bg-secondary: #1a2a4e;
   --bg-overlay: rgba(255, 255, 255, 0.1);
   
   /* TopTier Brand Colors */
@@ -33,6 +33,7 @@
   min-height: 100vh;
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-attachment: fixed;
 }
 
 /* Header */

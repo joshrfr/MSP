@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CheckCircle2, Loader2, XCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import ResidentialFooter from '../components/ResidentialFooter';
 
 const PaymentSuccess = () => {
   const navigate = useNavigate();
@@ -271,6 +272,8 @@ const PaymentSuccess = () => {
           to { transform: rotate(360deg); }
         }
       `}</style>
+
+      <ResidentialFooter />
     </div>
   );
 };

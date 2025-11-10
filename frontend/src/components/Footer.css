@@ -31,6 +31,13 @@
 .footer-brand {
   text-align: center;
   padding-bottom: 2rem;
+}
+
+.footer-residential .footer-brand {
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.footer-business .footer-brand {
   border-bottom: 1px solid rgba(135, 206, 235, 0.2);
 }
 
