@@ -8,7 +8,7 @@ const BusinessFooter = () => {
         {/* Logo and Description */}
         <div className="footer-section footer-brand">
           <img
-            src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
+            src="/images/logo.png"
             alt="TopTier Technologies"
             className="footer-logo"
           />
