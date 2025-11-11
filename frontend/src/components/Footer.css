@@ -46,6 +46,9 @@
 .footer-logo {
   height: 50px;
   margin-bottom: 1rem;
+  display: block;
+  position: relative;
+  z-index: 5;
   filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.6));
   transition: filter 0.3s ease;
 }
