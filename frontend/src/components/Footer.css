@@ -46,6 +46,24 @@
 .footer-logo {
   height: 50px;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.6));
+  transition: filter 0.3s ease;
+}
+
+.footer-residential .footer-logo {
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.6));
+}
+
+.footer-residential .footer-brand:hover .footer-logo {
+  filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.9)) drop-shadow(0 0 40px rgba(0, 217, 255, 0.5));
+}
+
+.footer-business .footer-logo {
+  filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.6));
+}
+
+.footer-business .footer-brand:hover .footer-logo {
+  filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.9)) drop-shadow(0 0 40px rgba(135, 206, 235, 0.5));
 }
 
 .footer-description {

@@ -19,6 +19,7 @@ import HowItWorks from './pages/HowItWorks';
 import Antivirus from './pages/Antivirus';
 import BackupServices from './pages/BackupServices';
 import RemoteSupport from './pages/RemoteSupport';
+import StripeIntegration from './pages/StripeIntegration';
 import './Services.css';
 import './Home.css';
 import './Residential.css';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/residential/backup" element={<BackupServices />} />
           <Route path="/residential/remote-support" element={<RemoteSupport />} />
           <Route path="/payment/success" element={<PaymentSuccess />} />
+          <Route path="/stripe-integration" element={<StripeIntegration />} />
         </Routes>
       </BrowserRouter>
     </div>
