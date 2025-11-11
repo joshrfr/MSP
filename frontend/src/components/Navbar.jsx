@@ -25,7 +25,7 @@ const Navbar = ({ type = 'home' }) => {
             window.scrollTo(0, 0);
           }} style={{cursor: 'pointer'}}>
             <img
-              src="/images/logo.png"
+              src="/images/8.png"
               alt="TopTier Technologies"
               className="header-logo"
             />
@@ -58,7 +58,7 @@ const Navbar = ({ type = 'home' }) => {
             window.scrollTo(0, 0);
           }} style={{cursor: 'pointer'}}>
             <img
-              src="/images/logo.png"
+              src="/images/8.png"
               alt="TopTier Technologies"
               className="header-logo"
             />
@@ -144,7 +144,7 @@ const Navbar = ({ type = 'home' }) => {
           window.scrollTo(0, 0);
         }} style={{cursor: 'pointer'}}>
           <img
-            src="https://customer-assets.emergentagent.com/job_managed-tech-hub/artifacts/dmi0lnjh_8.png"
+            src="/images/8.png"
             alt="TopTier Technologies"
             className="header-logo"
           />

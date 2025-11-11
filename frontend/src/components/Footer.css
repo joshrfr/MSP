@@ -18,19 +18,21 @@
   max-width: 100%;
 }
 
-/* Common Footer Container - Stacked Layout */
+/* Common Footer Container - Grid Layout for Stacked Sections */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem 3rem;
 }
 
 /* Brand Section - Full Width on Top */
 .footer-brand {
+  grid-column: 1 / -1;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footer-residential .footer-brand {
@@ -101,45 +103,9 @@
   transform: translateY(-2px);
 }
 
-/* Links Grid - Below Brand */
-.footer-container > .footer-section:not(.footer-brand) {
-  display: inline-block;
-  width: calc(25% - 1.5rem);
-  vertical-align: top;
-}
-
-@media (max-width: 1024px) {
-  .footer-container > .footer-section:not(.footer-brand) {
-    width: calc(50% - 1rem);
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-container > .footer-section:not(.footer-brand) {
-    width: 100%;
-  }
-}
-
-/* Create a wrapper for the link sections */
-.footer-container::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 /* Footer Section - Link Columns */
 .footer-section {
   text-align: left;
-}
-
-.footer-section:not(.footer-brand) {
-  float: left;
-  margin-right: 2rem;
-}
-
-.footer-section:not(.footer-brand):last-of-type {
-  margin-right: 0;
 }
 
 .footer-heading {
@@ -210,37 +176,50 @@
   .footer-business {
     padding: 2rem 1.5rem 1rem;
   }
-  
+
   .footer-brand {
     padding-bottom: 1.5rem;
   }
-  
+
   .footer-logo {
     height: 40px;
   }
-  
+
   .footer-container {
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem 1.5rem;
   }
-  
-  .footer-section:not(.footer-brand) {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 1.5rem;
+
+  .footer-section {
     text-align: center;
   }
-  
+
   .footer-links {
     align-items: center;
+    justify-content: center;
   }
-  
+
   .footer-bottom {
     margin-top: 1.5rem;
     padding-top: 1rem;
   }
-  
+
   .footer-description {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1rem 1rem;
+  }
+
+  .footer-heading {
+    font-size: 1rem;
+  }
+
+  .footer-logo {
+    height: 35px;
   }
 }
