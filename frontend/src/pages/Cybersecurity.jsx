@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Lock, Eye, AlertTriangle, TrendingUp, Globe } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import BusinessFooter from '../components/BusinessFooter';
 import RacingBlueLight from '../components/RacingBlueLight';
 
 const Cybersecurity = () => {

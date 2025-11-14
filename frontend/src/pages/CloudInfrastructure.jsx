@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Cloud, Database, Layers, Zap, DollarSign, Lock } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import BusinessFooter from '../components/BusinessFooter';
 import RacingBlueLight from '../components/RacingBlueLight';
 
 const CloudInfrastructure = () => {
