@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, ArrowRight, ShoppingCart, X, Plus, Minus } from '
 import NetworkAnimation from '../components/NetworkAnimation';
 import Navbar from '../components/Navbar';
 import ResidentialFooter from '../components/ResidentialFooter';
+import ReviewsWidget from '../components/ReviewsWidget';
 import ServiceRequestForm from '../components/ServiceRequestForm';
 import PCBuildForm from '../components/PCBuildForm';
 import { residentialPlans } from '../mock';
@@ -326,6 +327,9 @@ const Residential = () => {
           )}
         </div>
       )}
+
+      {/* Reviews Section */}
+      <ReviewsWidget />
 
       {/* About Us Section */}
       <section className="about-section" id="about">
