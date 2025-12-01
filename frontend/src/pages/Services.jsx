@@ -38,8 +38,14 @@ const Services = () => {
   };
 
   const handleConsultation = () => {
-    console.log('Opening consultation form with:', selectedServices);
-    alert('Consultation booking feature will be integrated with ITFLOW in production!');
+    console.log('Starting consultation with:', selectedServices);
+    // Trigger 3CX chat widget
+    if (window._3cxChat) {
+      window._3cxChat.show();
+    } else {
+      // Fallback: scroll to chat or open contact form
+      window.open('tel:8506103889');
+    }
   };
 
   const getRecommendedTier = () => {

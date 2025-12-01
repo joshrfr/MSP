@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, Shield, Phone, ArrowRight, Clock } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import ResidentialFooter from '../components/ResidentialFooter';
+import './PlanDetail.css';
 
 const HomeCarePlus = () => {
   const navigate = useNavigate();
@@ -43,28 +44,19 @@ const HomeCarePlus = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="service-hero service-hero-compact" style={{background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'}}>
+      <section className="service-hero service-hero-compact plan-detail-hero">
         <div className="container">
-          <div className="plan-badge" style={{
-            display: 'inline-block',
-            padding: '0.5rem 1rem',
-            background: 'rgba(135, 206, 235, 0.2)',
-            border: '1px solid #87CEEB',
-            borderRadius: '20px',
-            color: '#87CEEB',
-            fontSize: '0.9rem',
-            marginBottom: '1rem'
-          }}>
+          <div className="plan-detail-badge">
             Most Popular Plan
           </div>
-          <h1 className="service-hero-title">HomeCare Plus</h1>
-          <div style={{fontSize: '2.5rem', fontWeight: 'bold', color: '#87CEEB', marginBottom: '1rem'}}>
+          <h1 className="service-hero-title plan-detail-title">HomeCare Plus</h1>
+          <div className="plan-detail-pricing">
             $95 - $135/month
           </div>
           <p className="service-hero-subtitle">
             Comprehensive IT support with proactive monitoring. Perfect for families and home offices.
           </p>
-          <div style={{display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap'}}>
+          <div className="plan-detail-cta-buttons">
             <button className="btn-primary" onClick={() => navigate('/residential#service-request')}>
               Get Started
               <ArrowRight size={20} />

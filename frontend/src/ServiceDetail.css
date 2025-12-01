@@ -2,14 +2,14 @@
 
 .service-detail-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0f0d 0%, #1a2520 100%);
-  color: #e8f5e9;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #E8E8E8;
 }
 
 /* Breadcrumb */
 .breadcrumb-container {
   padding: 1rem 0;
-  background: rgba(13, 27, 20, 0.6);
+  background: rgba(15, 52, 96, 0.6);
   border-bottom: 1px solid rgba(135, 206, 235, 0.2);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .breadcrumb-item:hover {
-  color: #ff9800;
+  color: #FF6B35;
 }
 
 .breadcrumb-separator {
@@ -39,7 +39,7 @@
 /* Service Hero Section */
 .service-hero {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(13, 27, 20, 0.8) 0%, rgba(26, 37, 32, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
   border-bottom: 2px solid rgba(135, 206, 235, 0.3);
   position: relative;
   overflow: hidden;
@@ -96,7 +96,7 @@
 
 /* Content Block */
 .content-block {
-  background: rgba(13, 27, 20, 0.6);
+  background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(135, 206, 235, 0.2);
   border-radius: 12px;
   padding: 2.5rem;
@@ -166,11 +166,11 @@
 
 .content-note {
   background: rgba(70, 130, 180, 0.1);
-  border-left: 4px solid #ff9800;
+  border-left: 4px solid #FF6B35;
   padding: 1rem 1.5rem;
   margin-top: 1.5rem;
   border-radius: 4px;
-  color: #ffcc80;
+  color: #FFB380;
   font-style: italic;
 }
 
@@ -255,7 +255,7 @@
 }
 
 .feature-card {
-  background: rgba(13, 27, 20, 0.8);
+  background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(135, 206, 235, 0.2);
   border-radius: 12px;
   padding: 2rem;
@@ -364,13 +364,13 @@
 
 .stat-item h3 {
   font-size: 3rem;
-  color: #ff9800;
+  color: #FF6B35;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 20px rgba(70, 130, 180, 0.3);
 }
 
 .stat-item p {
-  color: #ffcc80;
+  color: #FFB380;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -420,13 +420,13 @@
 }
 
 .cost-item h3 {
-  color: #ff9800;
+  color: #FF6B35;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 .cost-item p {
-  color: #ffcc80;
+  color: #FFB380;
   line-height: 1.6;
 }
 
@@ -464,7 +464,7 @@
 }
 
 .solution-card {
-  background: rgba(13, 27, 20, 0.6);
+  background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(135, 206, 235, 0.2);
   border-radius: 12px;
   padding: 2rem;
