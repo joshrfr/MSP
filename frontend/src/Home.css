@@ -10,11 +10,11 @@
 /* Hero Tagline */
 .hero-tagline {
   font-size: 1.5rem;
-  color: #0066CC;
+  color: #87CEEB;
   font-weight: 600;
   font-style: italic;
   margin: 1rem 0;
-  text-shadow: none;
+  text-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
 }
 
 /* Service Request Section */
@@ -95,7 +95,7 @@
 /* Metrics Section */
 .metrics-section {
   padding: 100px 7.6923%;
-  background: #F8F9FA;
+  background: rgba(135, 206, 235, 0.03);
 }
 
 .metrics-content {
@@ -172,7 +172,7 @@
 /* Transparent Pricing Section */
 .transparent-pricing-section {
   padding: 120px 7.6923%;
-  background: linear-gradient(135deg, #E8F4FF 0%, #F0E8FF 100%);
+  background: rgba(0, 255, 209, 0.05);
   text-align: center;
 }
 
@@ -183,13 +183,13 @@
 
 .pricing-badge {
   display: inline-block;
-  background: rgba(0, 102, 204, 0.1);
-  color: #0066CC;
+  background: rgba(0, 255, 209, 0.15);
+  color: var(--brand-accent);
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 24px;
-  border: 1px solid #0066CC;
+  border: 1px solid var(--brand-accent);
 }
 
 .pricing-title {
@@ -210,7 +210,7 @@
 /* Service Links Section */
 .service-links-section {
   padding: 100px 7.6923%;
-  background: #F8F9FA;
+  background: rgba(255, 155, 80, 0.03);
 }
 
 .service-links-content {
@@ -262,7 +262,7 @@
 /* Residential Services Section */
 .residential-section {
   padding: 100px 7.6923%;
-  background: #FFFFFF;
+  background: rgba(255, 155, 80, 0.03);
 }
 
 .residential-content {

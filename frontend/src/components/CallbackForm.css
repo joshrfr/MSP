@@ -1,6 +1,6 @@
 .callback-section {
   padding: 80px 7.6923%;
-  background: linear-gradient(135deg, #F0F3F7 0%, #E8F4FF 100%);
+  background: rgba(135, 206, 235, 0.03);
 }
 
 .callback-container {
@@ -16,24 +16,24 @@
 .callback-title {
   font-size: 42px;
   font-weight: 700;
-  color: #1a2a4e;
+  color: #E8E8E8;
   margin: 0 0 16px 0;
 }
 
 .callback-subtitle {
   font-size: 18px;
-  color: #556b7f;
+  color: #cbd5e0;
   margin: 0;
   line-height: 1.6;
 }
 
 .callback-success {
-  background: white;
+  background: #0f3460;
   border: 2px solid #00D9FF;
   padding: 60px 40px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 4px 16px rgba(135, 206, 235, 0.1);
 }
 
 .success-icon {
@@ -45,21 +45,21 @@
 
 .callback-success h3 {
   font-size: 28px;
-  color: #1a2a4e;
+  color: #E8E8E8;
   margin: 0 0 12px 0;
 }
 
 .callback-success p {
   font-size: 16px;
-  color: #556b7f;
+  color: #cbd5e0;
   margin: 0;
 }
 
 .callback-form {
-  background: white;
+  background: #0f3460;
   padding: 50px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .form-row {
@@ -84,39 +84,39 @@
   gap: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #1a2a4e;
+  color: #E8E8E8;
   margin-bottom: 8px;
 }
 
 .form-group label svg {
-  color: #0066CC;
+  color: #87CEEB;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   padding: 12px 16px;
-  border: 1px solid #E0E7F0;
+  border: 1px solid rgba(135, 206, 235, 0.3);
   border-radius: 6px;
   font-size: 16px;
   font-family: inherit;
   transition: all 0.3s ease;
-  background: #FAFBFC;
-  color: #1a2a4e;
+  background: #16213e;
+  color: #E8E8E8;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #0066CC;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+  border-color: #87CEEB;
+  background: #1a2a4e;
+  box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #8899AA;
+  color: #8892b0;
 }
 
 .form-group select {
@@ -132,21 +132,21 @@
 .callback-submit-btn {
   width: 100%;
   padding: 16px 32px;
-  background: linear-gradient(135deg, #0066CC 0%, #FF6B35 100%);
-  color: white;
+  background: linear-gradient(135deg, #87CEEB 0%, #FF6B35 100%);
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.25);
+  box-shadow: 0 4px 16px rgba(135, 206, 235, 0.25);
   margin-bottom: 16px;
 }
 
 .callback-submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.35);
+  box-shadow: 0 8px 24px rgba(135, 206, 235, 0.35);
 }
 
 .callback-submit-btn:active {
@@ -155,7 +155,7 @@
 
 .form-disclaimer {
   font-size: 13px;
-  color: #8899AA;
+  color: #8892b0;
   text-align: center;
   margin: 0;
 }
