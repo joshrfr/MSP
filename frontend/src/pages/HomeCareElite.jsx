@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, Crown, Phone, ArrowRight, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import ResidentialFooter from '../components/ResidentialFooter';
+import './PlanDetail.css';
 
 const HomeCareElite = () => {
   const navigate = useNavigate();
@@ -46,30 +47,20 @@ const HomeCareElite = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="service-hero service-hero-compact" style={{background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'}}>
+      <section className="service-hero service-hero-compact plan-detail-hero">
         <div className="container">
-          <div className="plan-badge" style={{
-            display: 'inline-block',
-            padding: '0.5rem 1rem',
-            background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
-            border: '1px solid #FFD700',
-            borderRadius: '20px',
-            color: '#1a1a2e',
-            fontSize: '0.9rem',
-            fontWeight: 'bold',
-            marginBottom: '1rem'
-          }}>
+          <div className="plan-detail-elite-badge">
             <Crown size={16} style={{display: 'inline', marginRight: '0.5rem'}} />
             Premium Concierge Service
           </div>
-          <h1 className="service-hero-title">HomeCare Elite</h1>
-          <div style={{fontSize: '2.5rem', fontWeight: 'bold', color: '#87CEEB', marginBottom: '1rem'}}>
+          <h1 className="service-hero-title plan-detail-title">HomeCare Elite</h1>
+          <div className="plan-detail-pricing">
             $155 - $179/month
           </div>
           <p className="service-hero-subtitle">
             White-glove IT concierge for your home. 24/7 support, quarterly on-site visits, and a dedicated account manager who knows your tech inside and out.
           </p>
-          <div style={{display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap'}}>
+          <div className="plan-detail-cta-buttons">
             <button className="btn-primary" onClick={() => navigate('/residential#service-request')}>
               Get Started
               <ArrowRight size={20} />
@@ -109,7 +100,7 @@ const HomeCareElite = () => {
                   borderRadius: '8px',
                   border: '1px solid rgba(135, 206, 235, 0.2)'
                 }}>
-                  <Star size={24} style={{color: '#FFD700', flexShrink: 0, marginTop: '0.1rem', fill: '#FFD700'}} />
+                  <Star size={24} style={{color: '#FF6B35', flexShrink: 0, marginTop: '0.1rem', fill: '#FF6B35'}} />
                   <span style={{color: '#e0e0e0'}}>{feature}</span>
                 </div>
               ))}
@@ -127,7 +118,7 @@ const HomeCareElite = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  background: '#FF6B35',
                   color: '#1a1a2e',
                   display: 'flex',
                   alignItems: 'center',
@@ -147,7 +138,7 @@ const HomeCareElite = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  background: '#FF6B35',
                   color: '#1a1a2e',
                   display: 'flex',
                   alignItems: 'center',
@@ -167,7 +158,7 @@ const HomeCareElite = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  background: '#FF6B35',
                   color: '#1a1a2e',
                   display: 'flex',
                   alignItems: 'center',
@@ -187,7 +178,7 @@ const HomeCareElite = () => {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  background: '#FF6B35',
                   color: '#1a1a2e',
                   display: 'flex',
                   alignItems: 'center',
@@ -216,19 +207,19 @@ const HomeCareElite = () => {
             }}>
               <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem'}}>
                 <div style={{textAlign: 'center'}}>
-                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700'}}>24/7</div>
+                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6B35'}}>24/7</div>
                   <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Priority Support</p>
                 </div>
                 <div style={{textAlign: 'center'}}>
-                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700'}}>&lt;30min</div>
+                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6B35'}}>&lt;30min</div>
                   <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Response Time</p>
                 </div>
                 <div style={{textAlign: 'center'}}>
-                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700'}}>4x/year</div>
+                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6B35'}}>4x/year</div>
                   <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>On-Site Visits</p>
                 </div>
                 <div style={{textAlign: 'center'}}>
-                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FFD700'}}>1-on-1</div>
+                  <div style={{fontSize: '2rem', fontWeight: 'bold', color: '#FF6B35'}}>1-on-1</div>
                   <p style={{color: '#e0e0e0', marginTop: '0.5rem'}}>Dedicated Manager</p>
                 </div>
               </div>

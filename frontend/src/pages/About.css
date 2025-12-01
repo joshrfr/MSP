@@ -1,9 +1,9 @@
 /* Business About Page - Clean Professional Theme */
 
 .about-page {
-  background: linear-gradient(180deg, #0a0f1e 0%, #16213e 100%);
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
   min-height: 100vh;
-  color: #e0e0e0;
+  color: #E8E8E8;
 }
 
 /* Section spacing */
@@ -100,7 +100,7 @@
 }
 
 .about-page .solution-card {
-  background: rgba(22, 33, 62, 0.6);
+  background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(135, 206, 235, 0.2);
   border-radius: 12px;
   padding: 2rem;
@@ -129,7 +129,7 @@
 }
 
 .about-page .solution-title {
-  color: #fff;
+  color: #E8E8E8;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -150,7 +150,7 @@
 }
 
 .about-page .partner-card {
-  background: rgba(22, 33, 62, 0.6);
+  background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(135, 206, 235, 0.2);
   padding: 1.5rem;
   border-radius: 8px;
