@@ -1,0 +1,78 @@
+.chat-widget-container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+}
+
+/* 3CX Chat Widget Styling Overrides */
+/* These styles will customize the 3CX widget appearance */
+#chat-frame-wrapper {
+  z-index: 999 !important;
+}
+
+#chat-button {
+  background: linear-gradient(135deg, #0066CC 0%, #FF6B35 100%) !important;
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.3) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+#chat-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.4) !important;
+}
+
+#chat-widget-container {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Chat window header */
+.chat-header {
+  background: linear-gradient(135deg, #0066CC 0%, #FF6B35 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Chat messages */
+.chat-message-incoming {
+  background: #F0F3F7 !important;
+  color: #1a2a4e !important;
+  border-radius: 8px !important;
+}
+
+.chat-message-outgoing {
+  background: #0066CC !important;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+/* Input area */
+.chat-input {
+  border-top: 1px solid #E0E7F0 !important;
+  background: #FFFFFF !important;
+}
+
+.chat-input input {
+  color: #1a2a4e !important;
+  border: 1px solid #E0E7F0 !important;
+  border-radius: 6px !important;
+  font-family: inherit !important;
+}
+
+.chat-input input::placeholder {
+  color: #8899AA !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-widget-container {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  #chat-widget-container {
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+  }
+}

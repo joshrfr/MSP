@@ -2,6 +2,9 @@ import React from 'react';
 import TechnicianAnimation from '../components/TechnicianAnimation';
 import RacingBlueLight from '../components/RacingBlueLight';
 import ServiceRequestForm from '../components/ServiceRequestForm';
+import CallbackForm from '../components/CallbackForm';
+import ServiceComparison from '../components/ServiceComparison';
+import ChatWidget from '../components/ChatWidget';
 import Navbar from '../components/Navbar';
 import BusinessFooter from '../components/BusinessFooter';
 import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp, Phone } from 'lucide-react';
@@ -238,21 +241,27 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Service Comparison Section */}
+      <ServiceComparison />
+
+      {/* Callback Form Section */}
+      <CallbackForm />
+
       {/* Final CTA */}
       <section className="final-cta-section">
         <div className="final-cta-content">
-          <h2 className="final-cta-title">Ready to Experience the Difference?</h2>
+          <h2 className="final-cta-title">Let's Transform Your IT Operations</h2>
           <p className="final-cta-subtitle">
-            Join businesses across Florida and Georgia who trust TopTier for their IT needs
+            Get in touch today for a free IT assessment and discover how TopTier can improve your business
           </p>
-          
+
           <div className="final-cta-buttons">
-            <button className="btn-primary" onClick={() => navigate('/services')}>
-              Build Your Custom Plan
-              <ArrowRight size={20} />
+            <button className="btn-primary" onClick={() => window.open('tel:8506103889')}>
+              Call Now: (850) 610-3889
+              <Phone size={20} />
             </button>
-            <button className="btn-secondary" onClick={() => window.open('tel:8506103889')}>
-              Call (850) 610-3889
+            <button className="btn-secondary" onClick={() => navigate('/services')}>
+              Build Your Plan
               <ArrowRight size={20} />
             </button>
           </div>
@@ -268,7 +277,10 @@ const Home = () => {
 
       {/* Footer */}
       <BusinessFooter />
-      
+
+      {/* Chat Widget */}
+      <ChatWidget />
+
     </div>
   );
 };

@@ -1,0 +1,244 @@
+.service-comparison-section {
+  padding: 100px 7.6923%;
+  background: #FFFFFF;
+}
+
+.comparison-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.comparison-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a2a4e;
+  margin: 0 0 16px 0;
+}
+
+.comparison-subtitle {
+  font-size: 20px;
+  color: #556b7f;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.comparison-card {
+  background: #F8F9FA;
+  border: 2px solid #E0E7F0;
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-card:hover {
+  border-color: #0066CC;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 102, 204, 0.15);
+}
+
+.comparison-card.recommended {
+  border-color: #FF6B35;
+  background: linear-gradient(135deg, #FFFAF5 0%, #FFF5F0 100%);
+  transform: scale(1.05);
+}
+
+.comparison-card.recommended:hover {
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
+  border-color: #FF6B35;
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background: linear-gradient(135deg, #FF6B35 0%, #FFB380 100%);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.tier-header {
+  margin-bottom: 32px;
+}
+
+.tier-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2a4e;
+  margin: 0 0 4px 0;
+}
+
+.tier-subtitle {
+  font-size: 14px;
+  color: #0066CC;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tier-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0066CC;
+  margin: 12px 0;
+}
+
+.tier-description {
+  font-size: 14px;
+  color: #556b7f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tier-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #556b7f;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+}
+
+.feature-item svg {
+  color: #0066CC;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tier-cta-btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tier-cta-btn.primary {
+  background: linear-gradient(135deg, #0066CC 0%, #FF6B35 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.25);
+}
+
+.tier-cta-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.35);
+}
+
+.tier-cta-btn.secondary {
+  background: white;
+  color: #0066CC;
+  border: 2px solid #0066CC;
+}
+
+.tier-cta-btn.secondary:hover {
+  background: #0066CC;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.comparison-footer {
+  text-align: center;
+  background: linear-gradient(135deg, #F0F3F7 0%, #E8F4FF 100%);
+  padding: 60px 40px;
+  border-radius: 12px;
+}
+
+.comparison-footer p {
+  font-size: 18px;
+  color: #556b7f;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.footer-cta-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0066CC 0%, #FF6B35 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.25);
+}
+
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.35);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .comparison-card.recommended {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-comparison-section {
+    padding: 60px 5%;
+  }
+
+  .comparison-title {
+    font-size: 32px;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .comparison-card {
+    padding: 30px 24px;
+  }
+
+  .recommended-badge {
+    right: 16px;
+    font-size: 11px;
+    padding: 4px 16px;
+  }
+
+  .comparison-footer {
+    padding: 40px 24px;
+  }
+}
