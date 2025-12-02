@@ -471,7 +471,15 @@ async def send_payment_confirmation_email(transaction: dict):
                 <p><strong>Transaction ID:</strong> {transaction.get('session_id')}</p>
                 <p><strong>Date:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}</p>
                 <hr style="border: 1px solid #ddd; margin: 15px 0;">
-                <p>Our team will be in touch within 24 hours to set up your service.</p>
+                <h3 style="color: #87CEEB;">90-Day Satisfaction Guarantee</h3>
+                <p style="background-color: #e8f4f8; padding: 15px; border-left: 4px solid #87CEEB;">
+                    <strong>We stand behind our services.</strong> If you're not completely satisfied with your service within 90 days, we'll refund your money - no questions asked. Your satisfaction is our priority.
+                </p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3 style="color: #87CEEB;">Your Portal Access</h3>
+                <p>Portal credentials and access instructions have been sent to your email. You can now log in to your account to manage your service.</p>
+                <p><strong>Portal Link:</strong> <a href="https://portal.tttmsp.com" style="color: #87CEEB;">https://portal.tttmsp.com</a></p>
+                <p>Our team will be in touch within 24 hours to set up your service and answer any questions you may have.</p>
                 <p>If you have any questions, please contact us at (850) 610-3889 or reply to this email.</p>
                 <p style="margin-top: 30px;">Best regards,<br><strong>The TopTier Technologies Team</strong></p>
             </div>

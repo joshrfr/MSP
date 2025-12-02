@@ -12,7 +12,7 @@
 }
 
 #chat-button {
-  background: linear-gradient(135deg, #87CEEB 0%, #FF6B35 100%) !important;
+  background: linear-gradient(135deg, #87CEEB 0%, #6B7280 100%) !important;
   box-shadow: 0 4px 16px rgba(135, 206, 235, 0.3) !important;
   border: none !important;
   transition: all 0.3s ease !important;
@@ -30,7 +30,7 @@
 
 /* Chat window header */
 .chat-header {
-  background: linear-gradient(135deg, #87CEEB 0%, #FF6B35 100%) !important;
+  background: linear-gradient(135deg, #87CEEB 0%, #6B7280 100%) !important;
   border-radius: 12px 12px 0 0 !important;
 }
 

@@ -37,7 +37,7 @@ const Navbar = ({ type = 'home' }) => {
               window.scrollTo(0, 0);
             }}>Home</a>
             <a href="/residential" className="nav-link">Residential</a>
-            <a href="/services" className="nav-link">Business</a>
+            <a href="/business-plans" className="nav-link">Business Plans</a>
             <a href="tel:8506103889" className="nav-link call-button">
               <Phone size={18} />
               (850) 610-3889
@@ -156,17 +156,18 @@ const Navbar = ({ type = 'home' }) => {
             window.scrollTo(0, 0);
           }} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
           
-          {/* Products & Services Dropdown */}
-          <div 
+          {/* Plans & Services Dropdown */}
+          <div
             className="nav-dropdown"
             onMouseEnter={() => handleMouseEnter('services')}
             onMouseLeave={handleMouseLeave}
           >
             <button className="nav-link dropdown-trigger">
-              Products & Services <ChevronDown size={16} />
+              Plans <ChevronDown size={16} />
             </button>
             {activeDropdown === 'services' && (
               <div className="dropdown-menu">
+                <a href="/business-plans" className="dropdown-item">Pricing & Plans</a>
                 <a href="/strategic-services" className="dropdown-item">Strategic Services</a>
                 <a href="/it-services" className="dropdown-item">IT Services</a>
                 <a href="/cybersecurity" className="dropdown-item">Cybersecurity Services</a>

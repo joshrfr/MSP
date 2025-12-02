@@ -29,7 +29,7 @@
 }
 
 .breadcrumb-item:hover {
-  color: #FF6B35;
+  color: #6B7280;
 }
 
 .breadcrumb-separator {
@@ -166,11 +166,11 @@
 
 .content-note {
   background: rgba(70, 130, 180, 0.1);
-  border-left: 4px solid #FF6B35;
+  border-left: 4px solid #6B7280;
   padding: 1rem 1.5rem;
   margin-top: 1.5rem;
   border-radius: 4px;
-  color: #FFB380;
+  color: #9CA3AF;
   font-style: italic;
 }
 
@@ -364,13 +364,13 @@
 
 .stat-item h3 {
   font-size: 3rem;
-  color: #FF6B35;
+  color: #6B7280;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 20px rgba(70, 130, 180, 0.3);
 }
 
 .stat-item p {
-  color: #FFB380;
+  color: #9CA3AF;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -420,13 +420,13 @@
 }
 
 .cost-item h3 {
-  color: #FF6B35;
+  color: #6B7280;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 .cost-item p {
-  color: #FFB380;
+  color: #9CA3AF;
   line-height: 1.6;
 }
 

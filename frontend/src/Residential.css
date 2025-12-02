@@ -36,7 +36,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background: #FF4444;
+  background: #6B7280;
   color: #FFF;
   font-size: 0.75rem;
   font-weight: bold;
@@ -158,12 +158,12 @@
 
 .plan-popular {
   border-color: var(--brand-warm);
-  background: rgba(255, 155, 80, 0.05);
+  background: rgba(107, 114, 128, 0.05);
 }
 
 .plan-popular:hover {
   border-color: var(--brand-warm);
-  box-shadow: 0 12px 48px rgba(255, 155, 80, 0.4);
+  box-shadow: 0 12px 48px rgba(107, 114, 128, 0.4);
 }
 
 .popular-tag {

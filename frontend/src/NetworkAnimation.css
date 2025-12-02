@@ -34,10 +34,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.2) 0%, rgba(255, 155, 80, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.2) 0%, rgba(107, 114, 128, 0.2) 100%);
   border-color: var(--brand-warm);
   color: var(--brand-warm);
-  box-shadow: 0 0 40px rgba(255, 155, 80, 0.3);
+  box-shadow: 0 0 40px rgba(107, 114, 128, 0.3);
   animation: pulse 2s ease-in-out infinite;
 }
 

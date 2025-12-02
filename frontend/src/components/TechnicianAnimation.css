@@ -28,8 +28,8 @@
 }
 
 .led-orange {
-  fill: #ffa500;
-  filter: drop-shadow(0 0 5px #ffa500);
+  fill: #6B7280;
+  filter: drop-shadow(0 0 5px #6B7280);
 }
 
 .led-red {

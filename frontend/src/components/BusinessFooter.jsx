@@ -38,6 +38,7 @@ const BusinessFooter = () => {
         <div className="footer-section">
           <h4 className="footer-heading">Services</h4>
           <ul className="footer-links">
+            <li><a href="/business-plans">View Plans & Pricing</a></li>
             <li><a href="/strategic-services">Strategic Services</a></li>
             <li><a href="/it-services">IT Services</a></li>
             <li><a href="/cybersecurity">Cybersecurity Services</a></li>
