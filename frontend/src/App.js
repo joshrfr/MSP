@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Services from './pages/Services';
+import BusinessPlans from './pages/BusinessPlans';
 import Residential from './pages/Residential';
 import StrategicServices from './pages/StrategicServices';
 import ITServices from './pages/ITServices';
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/residential" element={<Residential />} />
+          <Route path="/business-plans" element={<BusinessPlans />} />
           <Route path="/services" element={<Services />} />
           <Route path="/strategic-services" element={<StrategicServices />} />
           <Route path="/it-services" element={<ITServices />} />

@@ -16,8 +16,8 @@
   --brand-secondary: #00A3E0;
   --brand-tertiary: #4682B4;
   --brand-accent: #00D9FF;
-  --brand-warm: #FF6B35;
-  --brand-warm-light: #FFB380;
+  --brand-warm: #6B7280;
+  --brand-warm-light: #9CA3AF;
   --brand-hover: rgba(135, 206, 235, 0.15);
 
   /* Text - Light for dark backgrounds (Matching Footer) */
@@ -214,7 +214,7 @@
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--brand-warm) 0%, var(--brand-primary) 100%);
-  box-shadow: 0 0 30px rgba(255, 155, 80, 0.5);
+  box-shadow: 0 0 30px rgba(107, 114, 128, 0.5);
   transform: translateY(-2px);
 }
 

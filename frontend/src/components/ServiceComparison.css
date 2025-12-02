@@ -52,21 +52,21 @@
 }
 
 .comparison-card.recommended {
-  border-color: #FF6B35;
+  border-color: #6B7280;
   background: rgba(255, 107, 53, 0.05);
   transform: scale(1.05);
 }
 
 .comparison-card.recommended:hover {
   box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
-  border-color: #FF6B35;
+  border-color: #6B7280;
 }
 
 .recommended-badge {
   position: absolute;
   top: -14px;
   right: 24px;
-  background: linear-gradient(135deg, #FF6B35 0%, #FFB380 100%);
+  background: linear-gradient(135deg, #6B7280 0%, #9CA3AF 100%);
   color: white;
   padding: 6px 20px;
   font-size: 12px;
@@ -153,7 +153,7 @@
 }
 
 .tier-cta-btn.primary {
-  background: linear-gradient(135deg, #87CEEB 0%, #FF6B35 100%);
+  background: linear-gradient(135deg, #87CEEB 0%, #6B7280 100%);
   color: black;
   box-shadow: 0 4px 16px rgba(135, 206, 235, 0.25);
 }
@@ -191,7 +191,7 @@
 
 .footer-cta-btn {
   padding: 14px 32px;
-  background: linear-gradient(135deg, #87CEEB 0%, #FF6B35 100%);
+  background: linear-gradient(135deg, #87CEEB 0%, #6B7280 100%);
   color: black;
   border: none;
   border-radius: 6px;

@@ -139,8 +139,15 @@ const PaymentSuccess = () => {
               border: '1px solid rgba(40, 167, 69, 0.3)',
               marginBottom: '2rem'
             }}>
-              <p style={{color: '#e0e0e0', fontSize: '1rem'}}>
-                A confirmation email has been sent to your email address. Our team will contact you within 24 hours to set up your service.
+              <h4 style={{color: '#28a745', marginTop: 0}}>What Happens Next:</h4>
+              <p style={{color: '#e0e0e0', fontSize: '1rem', marginBottom: '0.5rem'}}>
+                ✓ A confirmation email has been sent with your 90-day guarantee details
+              </p>
+              <p style={{color: '#e0e0e0', fontSize: '1rem', marginBottom: '0.5rem'}}>
+                ✓ Portal access credentials will be provided in your confirmation email
+              </p>
+              <p style={{color: '#e0e0e0', fontSize: '1rem', marginBottom: 0}}>
+                ✓ Our team will contact you within 24 hours to set up your service
               </p>
             </div>
 
