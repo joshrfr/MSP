@@ -118,6 +118,54 @@ class CheckoutRequest(BaseModel):
     user_email: Optional[str] = None
     user_name: Optional[str] = None
 
+# Qualification Models
+class CorePlusQualificationRequest(BaseModel):
+    business_type: str
+    current_support: List[str]
+    tech_comfort: str
+    pain_point: str
+    timeline: str
+    auto_score: float
+    qualification_status: str
+    timestamp: str
+
+class PremiumQualificationRequest(BaseModel):
+    company_name: str
+    website: Optional[str] = None
+    ein: Optional[str] = None
+    years_business: str
+    industry: str
+    employee_count: str
+    locations: str
+    it_infrastructure: List[str] = []
+    current_support: str
+    security_posture: List[str] = []
+    compliance_needs: List[str] = []
+    main_challenges: str
+    budget_range: Optional[str] = None
+    timeline: str
+    decision_maker: str
+    contact_name: str
+    contact_email: EmailStr
+    contact_phone: Optional[str] = None
+    auto_score: float
+    qualification_status: str
+    timestamp: str
+
+class EnterpriseDiscoveryRequest(BaseModel):
+    company_name: str
+    website: Optional[str] = None
+    employee_count: str
+    contact_name: str
+    contact_email: EmailStr
+    contact_phone: Optional[str] = None
+    current_it: str
+    pain_points: str
+    project_scope: str
+    timeline: str
+    contact_preference: str
+    timestamp: str
+
 class PaymentTransaction(BaseModel):
     id: str
     session_id: str
@@ -241,6 +289,202 @@ async def submit_pc_build_request(request: PCBuildRequest):
         return {"success": True, "message": "Your build request has been received. We'll send you a quote shortly!"}
     except Exception as e:
         logger.error(f"Error processing PC build request: {str(e)}")
+        return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
+
+@api_router.post("/qualifications/core-plus")
+async def submit_core_plus_qualification(request: CorePlusQualificationRequest):
+    """Handle Core+ plan qualification submissions"""
+    try:
+        qual_doc = request.model_dump()
+        qual_doc['id'] = str(uuid.uuid4())
+
+        # Prepare email body based on qualification status
+        if request.qualification_status == 'auto_approved':
+            email_subject = f"✓ Core+ Qualification Approved - Reference ID: {qual_doc['id']}"
+            sales_email_body = f"""
+            <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <h2 style="color: #28a745;">Core+ Qualification AUTO-APPROVED</h2>
+                <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                    <p><strong>Reference ID:</strong> {qual_doc['id']}</p>
+                    <p><strong>Auto Score:</strong> {request.auto_score}/100</p>
+                    <p><strong>Status:</strong> AUTO-APPROVED - Customer can proceed to checkout</p>
+                    <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                    <h3>Qualification Details</h3>
+                    <p><strong>Business Type:</strong> {request.business_type}</p>
+                    <p><strong>Current IT Support:</strong> {', '.join(request.current_support)}</p>
+                    <p><strong>Tech Comfort Level:</strong> {request.tech_comfort}/4</p>
+                    <p><strong>Main Pain Point:</strong> {request.pain_point}</p>
+                    <p><strong>Timeline:</strong> {request.timeline}</p>
+                    <p><strong>Submitted:</strong> {request.timestamp}</p>
+                </div>
+            </body>
+            </html>
+            """
+        else:
+            email_subject = f"⏳ Core+ Qualification - Manual Review Needed - Reference ID: {qual_doc['id']}"
+            sales_email_body = f"""
+            <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <h2 style="color: #FF9800;">Core+ Qualification - MANUAL REVIEW</h2>
+                <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                    <p><strong>Reference ID:</strong> {qual_doc['id']}</p>
+                    <p><strong>Auto Score:</strong> {request.auto_score}/100</p>
+                    <p><strong>Status:</strong> MANUAL REVIEW - Sales team to follow up within 2 hours</p>
+                    <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                    <h3>Qualification Details</h3>
+                    <p><strong>Business Type:</strong> {request.business_type}</p>
+                    <p><strong>Current IT Support:</strong> {', '.join(request.current_support)}</p>
+                    <p><strong>Tech Comfort Level:</strong> {request.tech_comfort}/4</p>
+                    <p><strong>Main Pain Point:</strong> {request.pain_point}</p>
+                    <p><strong>Timeline:</strong> {request.timeline}</p>
+                    <p><strong>Submitted:</strong> {request.timestamp}</p>
+                </div>
+            </body>
+            </html>
+            """
+
+        # Send alert email to sales team
+        await send_email(
+            to_email=SMTP_FROM_EMAIL,
+            subject=email_subject,
+            body=sales_email_body
+        )
+
+        # Store in database
+        await db.core_plus_qualifications.insert_one(qual_doc)
+
+        return {"success": True, "id": qual_doc['id'], "message": "Your qualification has been recorded."}
+    except Exception as e:
+        logger.error(f"Error processing Core+ qualification: {str(e)}")
+        return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
+
+@api_router.post("/qualifications/premium")
+async def submit_premium_qualification(request: PremiumQualificationRequest):
+    """Handle Premium plan qualification submissions"""
+    try:
+        qual_doc = request.model_dump()
+        qual_doc['id'] = str(uuid.uuid4())
+
+        # Map status to decision messaging
+        status_messages = {
+            'approved': '✓ APPROVED - High-fit candidate',
+            'conditional': '⏳ CONDITIONAL - Needs review',
+            'schedule_call': '📞 SCHEDULE CALL - Discovery required',
+            'rejected': '❌ REJECTED - Not a fit at this time'
+        }
+
+        email_subject = f"{status_messages.get(request.qualification_status, 'Submission Received')} - Reference ID: {qual_doc['id']}"
+        sales_email_body = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #4682B4;">Premium Plan Qualification Submitted</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                <p><strong>Reference ID:</strong> {qual_doc['id']}</p>
+                <p><strong>Status:</strong> {status_messages.get(request.qualification_status, 'Pending Review')}</p>
+                <p><strong>Auto Score:</strong> {request.auto_score}/100</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Company Information</h3>
+                <p><strong>Company:</strong> {request.company_name}</p>
+                <p><strong>Website:</strong> {request.website or 'Not provided'}</p>
+                <p><strong>EIN:</strong> {request.ein or 'Not provided'}</p>
+                <p><strong>Years in Business:</strong> {request.years_business}</p>
+                <p><strong>Industry:</strong> {request.industry}</p>
+                <p><strong>Employees:</strong> {request.employee_count}</p>
+                <p><strong>Locations:</strong> {request.locations}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Contact Information</h3>
+                <p><strong>Name:</strong> {request.contact_name}</p>
+                <p><strong>Email:</strong> {request.contact_email}</p>
+                <p><strong>Phone:</strong> {request.contact_phone or 'Not provided'}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>IT & Infrastructure</h3>
+                <p><strong>Current Support Model:</strong> {request.current_support}</p>
+                <p><strong>Infrastructure:</strong> {', '.join(request.it_infrastructure) if request.it_infrastructure else 'Not specified'}</p>
+                <p><strong>Security Posture:</strong> {', '.join(request.security_posture) if request.security_posture else 'Not assessed'}</p>
+                <p><strong>Compliance Needs:</strong> {', '.join(request.compliance_needs) if request.compliance_needs else 'None'}</p>
+                <p><strong>Main Challenges:</strong> {request.main_challenges}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Business Details</h3>
+                <p><strong>Budget Range:</strong> {request.budget_range or 'Not specified'}</p>
+                <p><strong>Timeline:</strong> {request.timeline}</p>
+                <p><strong>Decision Maker:</strong> {request.decision_maker}</p>
+                <p><strong>Submitted:</strong> {request.timestamp}</p>
+            </div>
+        </body>
+        </html>
+        """
+
+        # Send alert email to sales team
+        await send_email(
+            to_email=SMTP_FROM_EMAIL,
+            subject=email_subject,
+            body=sales_email_body
+        )
+
+        # Store in database
+        await db.premium_qualifications.insert_one(qual_doc)
+
+        return {"success": True, "id": qual_doc['id'], "message": "Your application has been received."}
+    except Exception as e:
+        logger.error(f"Error processing Premium qualification: {str(e)}")
+        return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
+
+@api_router.post("/qualifications/enterprise")
+async def submit_enterprise_discovery(request: EnterpriseDiscoveryRequest):
+    """Handle Enterprise plan discovery submissions"""
+    try:
+        discovery_doc = request.model_dump()
+        discovery_doc['id'] = str(uuid.uuid4())
+        discovery_doc['status'] = 'pending_outreach'
+
+        # Prepare sales team email
+        sales_email_body = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #FF6B6B;">NEW Enterprise Discovery Request</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+                <p><strong>PRIORITY: HIGH - Reach out within 24 hours</strong></p>
+                <p><strong>Reference ID:</strong> {discovery_doc['id']}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Company Information</h3>
+                <p><strong>Company:</strong> {request.company_name}</p>
+                <p><strong>Website:</strong> {request.website or 'Not provided'}</p>
+                <p><strong>Employees:</strong> {request.employee_count}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Primary Contact</h3>
+                <p><strong>Name:</strong> {request.contact_name}</p>
+                <p><strong>Email:</strong> {request.contact_email}</p>
+                <p><strong>Phone:</strong> {request.contact_phone or 'Not provided'}</p>
+                <p><strong>Preferred Contact Method:</strong> {request.contact_preference.upper()}</p>
+                <hr style="border: 1px solid #ddd; margin: 15px 0;">
+                <h3>Business Details</h3>
+                <p><strong>Current IT Situation:</strong></p>
+                <p style="white-space: pre-wrap; background-color: #fff; padding: 10px; border-left: 4px solid #FF6B6B;">{request.current_it}</p>
+                <p><strong>Main Challenges:</strong></p>
+                <p style="white-space: pre-wrap; background-color: #fff; padding: 10px; border-left: 4px solid #FF6B6B;">{request.pain_points}</p>
+                <p><strong>Project Scope:</strong></p>
+                <p style="white-space: pre-wrap; background-color: #fff; padding: 10px; border-left: 4px solid #FF6B6B;">{request.project_scope}</p>
+                <p><strong>Timeline:</strong> {request.timeline}</p>
+                <p><strong>Submitted:</strong> {request.timestamp}</p>
+            </div>
+        </body>
+        </html>
+        """
+
+        # Send alert email to sales team
+        await send_email(
+            to_email=SMTP_FROM_EMAIL,
+            subject=f"🚨 NEW Enterprise Discovery Request - {request.company_name} - Reference ID: {discovery_doc['id']}",
+            body=sales_email_body
+        )
+
+        # Store in database
+        await db.enterprise_discovery.insert_one(discovery_doc)
+
+        return {"success": True, "id": discovery_doc['id'], "message": "Your discovery request has been received."}
+    except Exception as e:
+        logger.error(f"Error processing Enterprise discovery: {str(e)}")
         return {"success": False, "message": "An error occurred. Please try calling us at (850) 610-3889."}
 
 @api_router.post("/status", response_model=StatusCheck)
