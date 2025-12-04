@@ -5,10 +5,10 @@ import ServiceRequestForm from '../components/ServiceRequestForm';
 import CallbackForm from '../components/CallbackForm';
 import ChatWidget from '../components/ChatWidget';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import { ArrowRight, CheckCircle2, Shield, Zap, Phone, TrendingUp, DollarSign } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { metrics } from '../mock';
+import { metrics, pricingTiers } from '../mock';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -99,11 +99,10 @@ const Home = () => {
               <button
                 className="btn-primary"
                 onClick={() => {
-                  alert('Our business portal is launching soon! For now, please call us at (850) 610-3889 or explore our residential services.');
-                  // Future: window.location.href = 'https://app.tttmsp.com/signup';
+                  document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Get Started
+                View Plans
                 <ArrowRight size={20} />
               </button>
               <a href="#services" className="btn-link" onClick={(e) => {
@@ -123,7 +122,7 @@ const Home = () => {
           <div className="section-header">
             <h2 className="section-title">Our Services</h2>
             <p className="section-subtitle">
-              Comprehensive managed IT services for businesses and homes
+              Comprehensive managed IT services for organizations of all sizes
             </p>
           </div>
 
@@ -170,40 +169,42 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Service Links */}
-      <section className="service-links-section" id="pricing">
-        <div className="service-links-content">
+      {/* Pricing Plans */}
+      <section className="pricing-section" id="pricing">
+        <div className="pricing-content">
           <div className="section-header">
-            <h2 className="section-title">Choose Your Service Type</h2>
+            <h2 className="section-title">Simple, Transparent Pricing</h2>
             <p className="section-subtitle">
-              We provide specialized IT solutions for both homes and businesses
+              Choose the plan that fits your organization's needs
             </p>
           </div>
 
-          <div className="service-types-grid">
-            <div className="service-type-card" onClick={() => navigate('/residential')}>
-              <h3>Residential IT Services</h3>
-              <p>Professional IT support for your home — from basic remote help to full concierge service</p>
-              <button className="btn-primary">
-                View Residential Plans
-                <ArrowRight size={20} />
-              </button>
-            </div>
-
-            <div className="service-type-card">
-              <h3>Business IT Services</h3>
-              <p>Enterprise-grade managed services with CORE, CORE+, PREMIUM, and ENTERPRISE tiers</p>
-              <button
-                className="btn-primary"
-                onClick={() => {
-                  alert('Our business portal is launching soon! For now, please call us at (850) 610-3889.');
-                  // Future: window.location.href = 'https://app.tttmsp.com/signup';
-                }}
-              >
-                Get Started
-                <ArrowRight size={20} />
-              </button>
-            </div>
+          <div className="pricing-grid">
+            {pricingTiers.map((tier) => (
+              <div key={tier.id} className={`pricing-card ${tier.recommended ? 'recommended' : ''}`}>
+                {tier.recommended && <div className="recommended-badge">Most Popular</div>}
+                <h3 className="pricing-tier-name">{tier.name}</h3>
+                <div className="pricing-tier-price">{tier.priceRange}</div>
+                <p className="pricing-tier-description">{tier.description}</p>
+                <p className="pricing-tier-users">{tier.users}</p>
+                <div className="pricing-tier-sla">SLA: {tier.sla}</div>
+                <ul className="pricing-tier-features">
+                  {tier.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <CheckCircle2 size={16} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  className="btn-primary"
+                  onClick={() => window.open('tel:8506103889')}
+                >
+                  Get Started
+                  <ArrowRight size={18} />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -247,13 +248,13 @@ const Home = () => {
             Unlike other MSPs, we believe in complete transparency. No hidden fees. No unexpected charges. Just honest pricing for honest service.
           </p>
           <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '30px' }}>
-            <button className="btn-primary" onClick={() => navigate('/residential')}>
-              View Residential Plans
+            <button className="btn-primary" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+              View Our Plans
               <ArrowRight size={20} />
             </button>
             <button className="btn-secondary" onClick={() => window.open('tel:8506103889')}>
               <Phone size={18} />
-              Call for Business Plans
+              Talk to an Expert
             </button>
           </div>
         </div>
@@ -291,7 +292,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <BusinessFooter />
+      <Footer />
 
       {/* Chat Widget */}
       <ChatWidget />

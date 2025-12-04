@@ -120,10 +120,10 @@ const CallbackForm = () => {
                   value={formData.serviceType}
                   onChange={handleChange}
                 >
-                  <option value="business">Business IT Services</option>
-                  <option value="residential">Residential IT Support</option>
+                  <option value="business">IT Services</option>
                   <option value="cybersecurity">Cybersecurity</option>
                   <option value="cloud">Cloud Infrastructure</option>
+                  <option value="strategic">Strategic Services</option>
                   <option value="other">Other/Not Sure</option>
                 </select>
               </div>

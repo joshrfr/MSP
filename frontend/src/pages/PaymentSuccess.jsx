@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CheckCircle2, Loader2, XCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import ResidentialFooter from '../components/ResidentialFooter';
+import Footer from '../components/Footer';
 
 const PaymentSuccess = () => {
   const navigate = useNavigate();
@@ -64,7 +64,7 @@ const PaymentSuccess = () => {
   return (
     <div className="payment-success-page" style={{minHeight: '100vh', background: '#0a0a1f'}}>
       {/* Header */}
-      <Navbar type="residential" />
+      <Navbar />
 
       <section style={{
         padding: '6rem 2rem',
@@ -170,8 +170,8 @@ const PaymentSuccess = () => {
               >
                 Return to Home
               </button>
-              <button 
-                onClick={() => navigate('/residential')}
+              <button
+                onClick={() => navigate('/services')}
                 style={{
                   padding: '0.75rem 2rem',
                   background: 'transparent',
@@ -186,7 +186,7 @@ const PaymentSuccess = () => {
                 onMouseEnter={(e) => e.target.style.borderColor = '#5fb3d1'}
                 onMouseLeave={(e) => e.target.style.borderColor = '#87CEEB'}
               >
-                View Plans
+                View Services
               </button>
             </div>
           </div>
@@ -280,7 +280,7 @@ const PaymentSuccess = () => {
         }
       `}</style>
 
-      <ResidentialFooter />
+      <Footer />
     </div>
   );
 };

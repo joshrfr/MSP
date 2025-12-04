@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import { CheckCircle2, DollarSign, TrendingUp } from 'lucide-react';
 
 const StripeIntegration = () => {
@@ -129,7 +129,7 @@ const StripeIntegration = () => {
         </div>
       </section>
 
-      <BusinessFooter />
+      <Footer />
     </div>
   );
 };

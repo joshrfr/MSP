@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, Download, FileText, ArrowRight, Podcast, Headphones } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import RacingBlueLight from '../components/RacingBlueLight';
 import '../DIYITPodcast.css';
 
@@ -220,7 +220,7 @@ const DIYITPodcast = () => {
         </div>
       </section>
 
-      <BusinessFooter />
+      <Footer />
     </div>
   );
 };

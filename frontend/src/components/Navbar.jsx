@@ -269,8 +269,15 @@ const Navbar = ({ type = 'home' }) => {
             )}
           </div>
 
-          {/* Pricing Link */}
-          <a href="/plan-selector" className="nav-link">Pricing</a>
+          {/* Pricing Link - scrolls to pricing on home page */}
+          <a href="/#pricing" className="nav-link" onClick={(e) => {
+            e.preventDefault();
+            navigate('/');
+            setTimeout(() => {
+              const element = document.getElementById('pricing');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}>Pricing</a>
 
           {/* FAQ Link */}
           <a href="/faq" className="nav-link">FAQ</a>
