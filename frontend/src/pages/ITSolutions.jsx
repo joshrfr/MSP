@@ -114,9 +114,14 @@ const ITSolutions = () => {
         <div className="container">
           <h2>Ready to Transform Your IT Infrastructure?</h2>
           <p>Let's discuss how our solutions can modernize your business technology.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Contact Us
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Contact Us
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

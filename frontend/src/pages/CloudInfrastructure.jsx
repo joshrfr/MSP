@@ -255,9 +255,14 @@ const CloudInfrastructure = () => {
         <div className="container">
           <h2>Ready to Modernize Your Infrastructure?</h2>
           <p>Let's discuss how cloud and infrastructure solutions can transform your business.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Request a Consultation
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Request a Consultation
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

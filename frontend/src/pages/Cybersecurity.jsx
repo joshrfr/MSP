@@ -218,9 +218,14 @@ const Cybersecurity = () => {
         <div className="container">
           <h2>Protect Your Business from Cyber Threats</h2>
           <p>Don't wait until it's too late. Let's secure your organization with enterprise-grade cybersecurity.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Schedule a Security Assessment
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Schedule a Security Assessment
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

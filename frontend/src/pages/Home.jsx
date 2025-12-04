@@ -198,7 +198,7 @@ const Home = () => {
                 </ul>
                 <button
                   className="btn-primary"
-                  onClick={() => window.open('tel:8506103889')}
+                  onClick={() => window.open('https://app.tttmsp.com', '_blank')}
                 >
                   Get Started
                   <ArrowRight size={18} />

@@ -179,9 +179,14 @@ const About = () => {
         <div className="container">
           <h2>Ready to Partner with TopTier?</h2>
           <p>Let's discuss how we can help your business thrive with reliable, innovative IT solutions.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Build Your Custom Plan
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Build Your Custom Plan
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

@@ -214,9 +214,14 @@ const StrategicServices = () => {
         <div className="container">
           <h2>Ready to Transform Your IT Strategy?</h2>
           <p>Let's discuss how our strategic approach can help your organization achieve its goals.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Schedule a Consultation
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Schedule a Consultation
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

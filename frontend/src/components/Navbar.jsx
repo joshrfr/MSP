@@ -147,6 +147,10 @@ const Navbar = ({ type = 'home' }) => {
               )}
             </div>
 
+            <a href="https://app.tttmsp.com" className="nav-link" target="_blank" rel="noopener noreferrer">
+              Customer Portal
+            </a>
+
             <a href="tel:8506103889" className="nav-link call-button">
               <Phone size={18} />
               (850) 610-3889
@@ -299,6 +303,10 @@ const Navbar = ({ type = 'home' }) => {
               </div>
             )}
           </div>
+
+          <a href="https://app.tttmsp.com" className="nav-link" target="_blank" rel="noopener noreferrer">
+            Customer Portal
+          </a>
 
           <a href="tel:8506103889" className="nav-link call-button">
             <Phone size={18} />
