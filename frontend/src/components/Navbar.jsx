@@ -39,19 +39,8 @@ const Navbar = ({ type = 'home' }) => {
               e.preventDefault();
               document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
             }}>Pricing</a>
-            <a href="#faq" className="nav-link" onClick={(e) => {
-              e.preventDefault();
-              const faqSection = document.getElementById('faq');
-              if (faqSection) {
-                faqSection.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                alert('FAQ section coming soon!');
-              }
-            }}>FAQ</a>
-            <a href="#blog" className="nav-link" onClick={(e) => {
-              e.preventDefault();
-              alert('Blog coming soon!');
-            }}>Blog</a>
+            <a href="/faq" className="nav-link">FAQ</a>
+            <a href="/blog" className="nav-link">Blog</a>
             <a href="tel:8506103889" className="nav-link call-button">
               <Phone size={18} />
               (850) 610-3889
@@ -77,15 +66,15 @@ const Navbar = ({ type = 'home' }) => {
               className="header-logo"
             />
           </div>
-          
+
           <nav className="navbar-nav">
             <button onClick={() => {
               navigate('/');
               window.scrollTo(0, 0);
             }} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
-            
+
             {/* Plans Dropdown */}
-            <div 
+            <div
               className="nav-dropdown"
               onMouseEnter={() => handleMouseEnter('plans')}
               onMouseLeave={handleMouseLeave}
@@ -105,7 +94,7 @@ const Navbar = ({ type = 'home' }) => {
             <a href="/residential/services" className="nav-link">Services</a>
 
             {/* Support Dropdown */}
-            <div 
+            <div
               className="nav-dropdown"
               onMouseEnter={() => handleMouseEnter('support')}
               onMouseLeave={handleMouseLeave}
@@ -123,7 +112,7 @@ const Navbar = ({ type = 'home' }) => {
             </div>
 
             {/* About Dropdown */}
-            <div 
+            <div
               className="nav-dropdown"
               onMouseEnter={() => handleMouseEnter('about')}
               onMouseLeave={handleMouseLeave}
@@ -163,51 +152,70 @@ const Navbar = ({ type = 'home' }) => {
             className="header-logo"
           />
         </div>
-        
+
         <nav className="navbar-nav">
           <button onClick={() => {
             navigate('/');
             window.scrollTo(0, 0);
           }} className="nav-link" style={{border: 'none', background: 'none'}}>Home</button>
-          
-          {/* Plans & Services Dropdown */}
-          <div
-            className="nav-dropdown"
-            onMouseEnter={() => handleMouseEnter('services')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className="nav-link dropdown-trigger">
-              Plans <ChevronDown size={16} />
-            </button>
-            {activeDropdown === 'services' && (
-              <div className="dropdown-menu">
-                <a href="/plan-selector" className="dropdown-item">Pricing & Plans</a>
-                <a href="/strategic-services" className="dropdown-item">Strategic Services</a>
-                <a href="/it-services" className="dropdown-item">IT Services</a>
-                <a href="/cybersecurity" className="dropdown-item">Cybersecurity Services</a>
-                <a href="/cloud-infrastructure" className="dropdown-item">Cloud Services</a>
-              </div>
-            )}
-          </div>
 
-          {/* IT Solutions Dropdown */}
-          <div 
-            className="nav-dropdown"
-            onMouseEnter={() => handleMouseEnter('solutions')}
+          {/* Products & Services Mega Menu */}
+          <div
+            className="nav-dropdown mega-menu-dropdown"
+            onMouseEnter={() => handleMouseEnter('products')}
             onMouseLeave={handleMouseLeave}
           >
             <button className="nav-link dropdown-trigger">
-              IT Solutions <ChevronDown size={16} />
+              Products & Services <ChevronDown size={16} />
             </button>
-            {activeDropdown === 'solutions' && (
-              <div className="dropdown-menu">
-                <a href="/it-solutions" className="dropdown-item">View All Solutions</a>
+            {activeDropdown === 'products' && (
+              <div className="mega-menu">
+                <div className="mega-menu-column">
+                  <h4 className="mega-menu-title">Strategic Services</h4>
+                  <a href="/strategic-services" className="mega-menu-item">IT Strategy & Budgeting</a>
+                  <a href="/strategic-services" className="mega-menu-item">IT Governance & Assessments</a>
+                  <a href="/strategic-services" className="mega-menu-item">Transition & Project Management</a>
+                  <a href="/strategic-services" className="mega-menu-item">Inventory Management</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h4 className="mega-menu-title">IT Services</h4>
+                  <a href="/it-services" className="mega-menu-item">24/7 Network Support</a>
+                  <a href="/it-services" className="mega-menu-item">24/7 Server Support</a>
+                  <a href="/it-services" className="mega-menu-item">24/7 Helpdesk Support</a>
+                  <a href="/it-services" className="mega-menu-item">Data Center Hosting</a>
+                  <a href="/it-services" className="mega-menu-item">SQL Database Support</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h4 className="mega-menu-title">Cybersecurity</h4>
+                  <a href="/cybersecurity" className="mega-menu-item">24/7 Security Operations Center</a>
+                  <a href="/cybersecurity" className="mega-menu-item">NextGen Anti-virus & EDR</a>
+                  <a href="/cybersecurity" className="mega-menu-item">AI-based Intrusion Detection</a>
+                  <a href="/cybersecurity" className="mega-menu-item">Backup & Disaster Recovery</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h4 className="mega-menu-title">Cloud Services</h4>
+                  <a href="/cloud-infrastructure" className="mega-menu-item">Azure Support & Maintenance</a>
+                  <a href="/cloud-infrastructure" className="mega-menu-item">Infrastructure as a Service</a>
+                  <a href="/cloud-infrastructure" className="mega-menu-item">Azure FinOps Services</a>
+                </div>
+
+                <div className="mega-menu-column">
+                  <h4 className="mega-menu-title">IT Solutions</h4>
+                  <a href="/it-solutions" className="mega-menu-item">Solution Selection & Procurement</a>
+                  <a href="/it-solutions" className="mega-menu-item">ERP Implementation</a>
+                  <a href="/it-solutions" className="mega-menu-item">Azure & O365 Migration</a>
+                  <a href="/it-solutions" className="mega-menu-item">Digital Transformation</a>
+                  <a href="/it-solutions" className="mega-menu-item">Infrastructure Refresh</a>
+                </div>
               </div>
             )}
           </div>
 
           {/* About Dropdown */}
-          <div 
+          <div
             className="nav-dropdown"
             onMouseEnter={() => handleMouseEnter('about')}
             onMouseLeave={handleMouseLeave}
@@ -238,6 +246,30 @@ const Navbar = ({ type = 'home' }) => {
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                   }, 100);
                 }}>Partners & Certifications</a>
+              </div>
+            )}
+          </div>
+
+          {/* Pricing Link */}
+          <a href="/plan-selector" className="nav-link">Pricing</a>
+
+          {/* FAQ Link */}
+          <a href="/faq" className="nav-link">FAQ</a>
+
+          {/* Blog Dropdown */}
+          <div
+            className="nav-dropdown"
+            onMouseEnter={() => handleMouseEnter('blog')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button className="nav-link dropdown-trigger">
+              Blog <ChevronDown size={16} />
+            </button>
+            {activeDropdown === 'blog' && (
+              <div className="dropdown-menu">
+                <a href="/blog" className="dropdown-item">Technology Blog</a>
+                <a href="/diy-it" className="dropdown-item">DIY-IT Podcast</a>
+                <a href="/resources" className="dropdown-item">Resource Hub</a>
               </div>
             )}
           </div>
