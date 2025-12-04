@@ -25,10 +25,18 @@ import Antivirus from './pages/Antivirus';
 import BackupServices from './pages/BackupServices';
 import RemoteSupport from './pages/RemoteSupport';
 import StripeIntegration from './pages/StripeIntegration';
+import FAQ from './pages/FAQ';
+import Blog from './pages/Blog';
+import DIYITPodcast from './pages/DIYITPodcast';
+import ResourceHub from './pages/ResourceHub';
 import './Services.css';
 import './Home.css';
 import './Residential.css';
 import './ServiceDetail.css';
+import './FAQ.css';
+import './Blog.css';
+import './DIYITPodcast.css';
+import './ResourceHub.css';
 import './App.css';
 
 function App() {
@@ -61,6 +69,11 @@ function App() {
           <Route path="/residential/remote-support" element={<RemoteSupport />} />
           <Route path="/payment/success" element={<PaymentSuccess />} />
           <Route path="/stripe-integration" element={<StripeIntegration />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/diy-it" element={<DIYITPodcast />} />
+          <Route path="/blog/diy-it" element={<DIYITPodcast />} />
+          <Route path="/resources" element={<ResourceHub />} />
         </Routes>
       </BrowserRouter>
     </div>
