@@ -8,51 +8,63 @@ const ServiceComparison = () => {
 
   const tiers = [
     {
-      name: 'Essential',
-      subtitle: 'For Small Businesses',
-      price: 'Custom',
-      description: 'Perfect for startups and small teams',
+      name: 'CORE',
+      subtitle: 'Remote Workers & Home Offices',
+      price: '$50-110/mo',
+      description: '2-6 devices · 24h response',
       features: [
-        'Remote support & monitoring',
-        'Antivirus & malware protection',
-        'Basic backup services',
-        '24/7 emergency support',
-        'Email support included'
+        'Backup & disaster recovery',
+        'Antivirus protection',
+        'System patching',
+        'Email & phone support',
+        'Remote support only'
       ],
       cta: 'Get Started',
       recommended: false
     },
     {
-      name: 'Professional',
-      subtitle: 'For Growing Businesses',
-      price: 'Custom',
-      description: 'Most popular choice for mid-size companies',
+      name: 'CORE+',
+      subtitle: 'Small Business',
+      price: '$95/user/mo',
+      description: '3-50 users · 1-4h response',
       features: [
-        'All Essential features',
-        'Advanced threat detection',
-        'Managed firewall & VPN',
-        'Cloud infrastructure management',
-        'Priority phone support',
-        'Quarterly security audits'
+        'RMM monitoring',
+        'EDR (Endpoint Detection & Response)',
+        'Dedicated account manager',
+        'Quarterly business review (QBR)',
+        'Priority support'
+      ],
+      cta: 'Get Started',
+      recommended: false
+    },
+    {
+      name: 'PREMIUM',
+      subtitle: 'Mid-Market',
+      price: '$145/user/mo',
+      description: '50-250 users · 15min response (24/7)',
+      features: [
+        '24/7 support available',
+        'Virtual CIO (vCIO)',
+        'Monthly disaster recovery testing',
+        'Compliance management',
+        'Advanced security monitoring'
       ],
       cta: 'Get Started',
       recommended: true
     },
     {
-      name: 'Enterprise',
-      subtitle: 'For Large Organizations',
-      price: 'Custom',
-      description: 'Complete managed IT solution',
+      name: 'ENTERPRISE',
+      subtitle: 'Large Organizations',
+      price: '$150-175/user/mo',
+      description: '250+ users · 30sec response (24/7)',
       features: [
-        'All Professional features',
-        'Dedicated account manager',
-        'Advanced cybersecurity services',
-        'Custom SLA agreements',
-        'Proactive threat hunting',
-        'Strategic IT planning & consulting',
-        '24/7 onsite support available'
+        'Dedicated operations team',
+        'SOC/NOC monitoring',
+        'Custom IT strategy',
+        'White-glove service',
+        'Enterprise-grade security'
       ],
-      cta: 'Schedule Demo',
+      cta: 'Schedule Call',
       recommended: false
     }
   ];
