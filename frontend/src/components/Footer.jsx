@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const BusinessFooter = () => {
+const Footer = () => {
   return (
     <footer className="footer-business">
       <div className="footer-container">
@@ -33,15 +33,15 @@ const BusinessFooter = () => {
             </a>
           </div>
         </div>
-        
+
         {/* Plans */}
         <div className="footer-section">
           <h4 className="footer-heading">Plans</h4>
           <ul className="footer-links">
-            <li><a href="/plan-selector">CORE ($50-110/mo)</a></li>
-            <li><a href="/plan-selector">CORE+ ($95/user)</a></li>
-            <li><a href="/plan-selector">PREMIUM ($145/user)</a></li>
-            <li><a href="/plan-selector">ENTERPRISE ($150-175/user)</a></li>
+            <li><a href="/#pricing">CORE ($50-110/mo)</a></li>
+            <li><a href="/#pricing">CORE+ ($95/user)</a></li>
+            <li><a href="/#pricing">PREMIUM ($145/user)</a></li>
+            <li><a href="/#pricing">ENTERPRISE ($150-175/user)</a></li>
           </ul>
         </div>
 
@@ -55,7 +55,7 @@ const BusinessFooter = () => {
             <li><a href="/cloud-infrastructure">Cloud Services</a></li>
           </ul>
         </div>
-        
+
         {/* Solutions */}
         <div className="footer-section">
           <h4 className="footer-heading">Solutions</h4>
@@ -64,7 +64,7 @@ const BusinessFooter = () => {
             <li><a href="/services">View All Services</a></li>
           </ul>
         </div>
-        
+
         {/* Company */}
         <div className="footer-section">
           <h4 className="footer-heading">Company</h4>
@@ -73,7 +73,7 @@ const BusinessFooter = () => {
             <li><a href="/about#partners">Partners</a></li>
           </ul>
         </div>
-        
+
         {/* Contact */}
         <div className="footer-section">
           <h4 className="footer-heading">Contact</h4>
@@ -84,7 +84,7 @@ const BusinessFooter = () => {
           </ul>
         </div>
       </div>
-      
+
       <div className="footer-bottom">
         <p>&copy; 2026 TopTier Technologies. All Rights Reserved.</p>
       </div>
@@ -92,4 +92,4 @@ const BusinessFooter = () => {
   );
 };
 
-export default BusinessFooter;
+export default Footer;

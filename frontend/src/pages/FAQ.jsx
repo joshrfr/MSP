@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Phone, Mail, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import RacingBlueLight from '../components/RacingBlueLight';
 import '../FAQ.css';
 
@@ -229,7 +229,7 @@ const FAQ = () => {
         </div>
       </section>
 
-      <BusinessFooter />
+      <Footer />
     </div>
   );
 };

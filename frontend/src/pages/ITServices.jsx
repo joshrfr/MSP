@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Server, Headphones, Clock, Shield, Wrench, Monitor } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import RacingBlueLight from '../components/RacingBlueLight';
 
 const ITServices = () => {
@@ -206,7 +206,7 @@ const ITServices = () => {
       </section>
 
       {/* Footer */}
-      <BusinessFooter />
+      <Footer />
       
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NetworkAnimation from '../components/NetworkAnimation';
 import RacingBlueLight from '../components/RacingBlueLight';
 import Navbar from '../components/Navbar';
-import BusinessFooter from '../components/BusinessFooter';
+import Footer from '../components/Footer';
 import { ArrowRight, CheckCircle2, Zap, Clock, Heart, Shield } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import PricingSummary from '../components/PricingSummary';
@@ -284,7 +284,7 @@ const Services = () => {
       </section>
 
       {/* Footer */}
-      <BusinessFooter />
+      <Footer />
 
       <FloatingActionButton />
     </div>
