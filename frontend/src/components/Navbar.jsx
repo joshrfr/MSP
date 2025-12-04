@@ -31,13 +31,27 @@ const Navbar = ({ type = 'home' }) => {
             />
           </div>
           <nav className="navbar-nav">
-            <a href="/" className="nav-link" onClick={(e) => {
+            <a href="#services" className="nav-link" onClick={(e) => {
               e.preventDefault();
-              navigate('/');
-              window.scrollTo(0, 0);
-            }}>Home</a>
-            <a href="/residential" className="nav-link">Residential</a>
-            <a href="/plan-selector" className="nav-link">Business Plans</a>
+              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+            }}>Services</a>
+            <a href="#pricing" className="nav-link" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+            }}>Pricing</a>
+            <a href="#faq" className="nav-link" onClick={(e) => {
+              e.preventDefault();
+              const faqSection = document.getElementById('faq');
+              if (faqSection) {
+                faqSection.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                alert('FAQ section coming soon!');
+              }
+            }}>FAQ</a>
+            <a href="#blog" className="nav-link" onClick={(e) => {
+              e.preventDefault();
+              alert('Blog coming soon!');
+            }}>Blog</a>
             <a href="tel:8506103889" className="nav-link call-button">
               <Phone size={18} />
               (850) 610-3889

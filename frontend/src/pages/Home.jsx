@@ -1,13 +1,12 @@
 import React from 'react';
-import TechnicianAnimation from '../components/TechnicianAnimation';
+import NetworkAnimation from '../components/NetworkAnimation';
 import RacingBlueLight from '../components/RacingBlueLight';
 import ServiceRequestForm from '../components/ServiceRequestForm';
 import CallbackForm from '../components/CallbackForm';
-import ServiceComparison from '../components/ServiceComparison';
 import ChatWidget from '../components/ChatWidget';
 import Navbar from '../components/Navbar';
 import BusinessFooter from '../components/BusinessFooter';
-import { ArrowRight, CheckCircle2, DollarSign, Shield, Zap, TrendingUp, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Zap, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { metrics } from '../mock';
 
@@ -79,45 +78,52 @@ const Home = () => {
       <RacingBlueLight />
 
       {/* Hero Section */}
-      <section className="hero-section" id="home">
+      <section className="hero-section hero-simplified" id="home">
+        <div className="hero-background">
+          <NetworkAnimation />
+        </div>
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Your Trusted IT Partner Across Florida & Georgia
+              TopTier Quality
             </h1>
             <p className="hero-tagline">
-              Quality at the Heart, Innovation Beyond Boundaries
+              Quality at the Heart.<br />
+              Innovation Beyond Boundaries.
             </p>
             <p className="hero-subtitle">
-              From cybersecurity to cloud solutions, we deliver enterprise-grade managed IT services with complete transparency. No hidden costs, no surprises — just reliable technology that powers your business.
+              Enterprise-Grade IT Support.<br />
+              Local Response. Transparent Pricing.
             </p>
             <div className="hero-buttons">
-              <button className="btn-primary" onClick={() => navigate('/services')}>
-                Build Your Custom Plan
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  alert('Our business portal is launching soon! For now, please call us at (850) 610-3889 or explore our residential services.');
+                  // Future: window.location.href = 'https://app.tttmsp.com/signup';
+                }}
+              >
+                Get Started
                 <ArrowRight size={20} />
               </button>
-              <button className="btn-secondary" onClick={() => window.open('tel:8506103889')}>
-                Call (850) 610-3889
-                <ArrowRight size={20} />
-              </button>
+              <a href="#services" className="btn-link" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
+                Learn More →
+              </a>
             </div>
           </div>
-          
-          <div className="hero-spline">
-            <TechnicianAnimation />
-          </div>
         </div>
-        
-        <div className="hero-pattern" />
       </section>
 
       {/* What We Offer */}
-      <section className="features-section" id="about">
+      <section className="features-section" id="services">
         <div className="features-content">
           <div className="section-header">
-            <h2 className="section-title">What We Offer</h2>
+            <h2 className="section-title">Our Services</h2>
             <p className="section-subtitle">
-              Comprehensive managed IT services designed for businesses of all sizes
+              Comprehensive managed IT services for businesses and homes
             </p>
           </div>
 
@@ -165,7 +171,7 @@ const Home = () => {
       </section>
 
       {/* Service Links */}
-      <section className="service-links-section">
+      <section className="service-links-section" id="pricing">
         <div className="service-links-content">
           <div className="section-header">
             <h2 className="section-title">Choose Your Service Type</h2>
@@ -184,11 +190,17 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="service-type-card" onClick={() => navigate('/services')}>
+            <div className="service-type-card">
               <h3>Business IT Services</h3>
-              <p>Enterprise-grade managed services — build your custom IT solution from 16 professional services</p>
-              <button className="btn-primary">
-                Build Your Business Plan
+              <p>Enterprise-grade managed services with CORE, CORE+, PREMIUM, and ENTERPRISE tiers</p>
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  alert('Our business portal is launching soon! For now, please call us at (850) 610-3889.');
+                  // Future: window.location.href = 'https://app.tttmsp.com/signup';
+                }}
+              >
+                Get Started
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -229,20 +241,23 @@ const Home = () => {
         <div className="transparent-pricing-content">
           <div className="pricing-badge">Transparent Pricing</div>
           <h2 className="pricing-title">
-            Build Your Plan. See Your Price. No Surprises.
+            Honest Pricing. No Surprises.
           </h2>
           <p className="pricing-description">
-            Unlike other MSPs, we believe in complete transparency. Use our interactive service builder to select exactly what you need and see your monthly cost in real-time. No hidden fees. No unexpected charges. Just honest pricing for honest service.
+            Unlike other MSPs, we believe in complete transparency. No hidden fees. No unexpected charges. Just honest pricing for honest service.
           </p>
-          <button className="btn-primary" onClick={() => navigate('/services')} style={{ margin: '0 auto', display: 'flex' }}>
-            Start Building Your Plan
-            <ArrowRight size={20} />
-          </button>
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '30px' }}>
+            <button className="btn-primary" onClick={() => navigate('/residential')}>
+              View Residential Plans
+              <ArrowRight size={20} />
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('tel:8506103889')}>
+              <Phone size={18} />
+              Call for Business Plans
+            </button>
+          </div>
         </div>
       </section>
-
-      {/* Service Comparison Section */}
-      <ServiceComparison />
 
       {/* Callback Form Section */}
       <CallbackForm />
