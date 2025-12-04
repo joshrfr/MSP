@@ -6,7 +6,7 @@ import CallbackForm from '../components/CallbackForm';
 import ChatWidget from '../components/ChatWidget';
 import Navbar from '../components/Navbar';
 import BusinessFooter from '../components/BusinessFooter';
-import { ArrowRight, CheckCircle2, Shield, Zap, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Zap, Phone, TrendingUp, DollarSign } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { metrics } from '../mock';
 
