@@ -199,9 +199,14 @@ const ITServices = () => {
         <div className="container">
           <h2>Experience Hassle-Free IT Management</h2>
           <p>Let our expert team handle your IT infrastructure while you focus on growing your business.</p>
-          <button className="btn-primary" onClick={() => navigate('/services')}>
-            Get Started Today
-          </button>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn-primary" onClick={() => navigate('/services')}>
+              Get Started Today
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
+            </button>
+          </div>
         </div>
       </section>
 

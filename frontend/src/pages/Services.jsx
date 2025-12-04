@@ -175,10 +175,16 @@ const Services = () => {
               })}
             </div>
 
-            <button className="btn-primary recommendation-cta" onClick={handleConsultation}>
-              Schedule a Discovery Call
-              <ArrowRight size={20} />
-            </button>
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+              <button className="btn-primary recommendation-cta" onClick={handleConsultation}>
+                Schedule a Discovery Call
+                <ArrowRight size={20} />
+              </button>
+              <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+                Customer Portal
+                <ArrowRight size={20} />
+              </button>
+            </div>
           </div>
         </section>
       )}
@@ -266,6 +272,10 @@ const Services = () => {
           <div className="final-cta-buttons">
             <button className="btn-primary" onClick={handleConsultation}>
               Book a Consultation
+              <ArrowRight size={20} />
+            </button>
+            <button className="btn-secondary" onClick={() => window.open('https://app.tttmsp.com', '_blank')}>
+              Customer Portal
               <ArrowRight size={20} />
             </button>
             <button className="btn-secondary" onClick={() => window.open('tel:8506103889')}>

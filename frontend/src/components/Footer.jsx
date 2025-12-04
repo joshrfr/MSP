@@ -81,6 +81,7 @@ const Footer = () => {
             <li><a href="tel:8506103889">(850) 610-3889</a></li>
             <li><a href="mailto:helpdesk@tttmsp.com">helpdesk@tttmsp.com</a></li>
             <li>24/7 Support Available</li>
+            <li><a href="https://app.tttmsp.com" target="_blank" rel="noopener noreferrer">Customer Portal</a></li>
           </ul>
         </div>
       </div>
