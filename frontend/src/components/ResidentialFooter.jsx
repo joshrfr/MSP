@@ -38,9 +38,10 @@ const ResidentialFooter = () => {
         <div className="footer-section">
           <h4 className="footer-heading">Plans</h4>
           <ul className="footer-links">
-            <li><a href="/residential/homecare-basic">HomeCare Basic</a></li>
-            <li><a href="/residential/homecare-plus">HomeCare Plus</a></li>
-            <li><a href="/residential/homecare-elite">HomeCare Elite</a></li>
+            <li><a href="/plan-selector">CORE ($50-110/mo)</a></li>
+            <li><a href="/plan-selector">CORE+ ($95/user)</a></li>
+            <li><a href="/plan-selector">PREMIUM ($145/user)</a></li>
+            <li><a href="/plan-selector">ENTERPRISE ($150-175/user)</a></li>
           </ul>
         </div>
         

@@ -50,9 +50,10 @@ const Services = () => {
 
   const getRecommendedTier = () => {
     const total = selectedServices.reduce((sum, s) => sum + s.price, 0);
-    if (total < 3000) return pricingTiers[0];
-    if (total < 6000) return pricingTiers[1];
-    return pricingTiers[2];
+    if (total < 500) return pricingTiers[0]; // CORE
+    if (total < 3000) return pricingTiers[1]; // CORE+
+    if (total < 6000) return pricingTiers[2]; // PREMIUM
+    return pricingTiers[3]; // ENTERPRISE
   };
 
   const iconMap = {

@@ -7,9 +7,10 @@ const PricingSummary = ({ selectedServices, onRemove, onConsultation }) => {
   }, [selectedServices]);
 
   const recommendedTier = useMemo(() => {
-    if (total < 3000) return 'SMB Essential';
-    if (total < 6000) return 'Professional';
-    return 'Enterprise Compliant';
+    if (total < 500) return 'CORE';
+    if (total < 3000) return 'CORE+';
+    if (total < 6000) return 'PREMIUM';
+    return 'ENTERPRISE';
   }, [total]);
 
   if (selectedServices.length === 0) {

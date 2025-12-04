@@ -34,14 +34,24 @@ const BusinessFooter = () => {
           </div>
         </div>
         
+        {/* Plans */}
+        <div className="footer-section">
+          <h4 className="footer-heading">Plans</h4>
+          <ul className="footer-links">
+            <li><a href="/plan-selector">CORE ($50-110/mo)</a></li>
+            <li><a href="/plan-selector">CORE+ ($95/user)</a></li>
+            <li><a href="/plan-selector">PREMIUM ($145/user)</a></li>
+            <li><a href="/plan-selector">ENTERPRISE ($150-175/user)</a></li>
+          </ul>
+        </div>
+
         {/* Services */}
         <div className="footer-section">
           <h4 className="footer-heading">Services</h4>
           <ul className="footer-links">
-            <li><a href="/plan-selector">View Plans & Pricing</a></li>
             <li><a href="/strategic-services">Strategic Services</a></li>
             <li><a href="/it-services">IT Services</a></li>
-            <li><a href="/cybersecurity">Cybersecurity Services</a></li>
+            <li><a href="/cybersecurity">Cybersecurity</a></li>
             <li><a href="/cloud-infrastructure">Cloud Services</a></li>
           </ul>
         </div>

@@ -141,44 +141,70 @@ export const serviceCategories = [
 
 export const pricingTiers = [
   {
-    id: 'essential',
-    name: 'SMB Essential',
-    description: 'Perfect for small businesses',
-    priceRange: '$1,500 - $3,000',
+    id: 'core',
+    name: 'CORE',
+    description: 'Remote workers, home offices, VPN/MFA/SAP users',
+    priceRange: '$50-110/mo',
+    priceDetails: '$50/mo for 2 devices, $70/mo for 3 devices, $90/mo for 4-5 devices, +$20/device additional',
+    users: '2-6 devices',
+    sla: '24-hour response (business hours 8am-5pm)',
     features: [
-      'Helpdesk Support',
-      'Basic Security Monitoring',
-      'Cloud Email Support',
-      'Monthly Reporting'
+      'Backup & disaster recovery',
+      'Antivirus protection',
+      'System patching',
+      'Email & phone support',
+      'Remote support only'
     ],
     recommended: false
   },
   {
-    id: 'professional',
-    name: 'Professional',
-    description: 'Ideal for growing businesses',
-    priceRange: '$3,000 - $6,000',
+    id: 'core-plus',
+    name: 'CORE+',
+    description: 'Small business (3-50 people)',
+    priceRange: '$95/user/mo',
+    priceDetails: 'Minimum $1,500/month',
+    users: '3-50 users',
+    sla: '1-hour P1, 4-hour P2 (business hours)',
     features: [
-      '24×7 Network Support',
-      'MDR & EDR Solutions',
-      'Cloud Management',
-      'Quarterly IT Strategy Reviews',
-      'Priority Support'
+      'RMM monitoring',
+      'EDR (Endpoint Detection & Response)',
+      'Dedicated account manager',
+      'Quarterly business review (QBR)',
+      'Priority support'
+    ],
+    recommended: false
+  },
+  {
+    id: 'premium',
+    name: 'PREMIUM',
+    description: 'Mid-market (50-250 people), compliance needs',
+    priceRange: '$145/user/mo',
+    priceDetails: 'Minimum $4,500/month',
+    users: '50-250 users',
+    sla: '15-minute P1 (24/7), 1-hour P2 (24/7)',
+    features: [
+      '24/7 support available',
+      'Virtual CIO (vCIO)',
+      'Monthly disaster recovery testing',
+      'Compliance management',
+      'Advanced security monitoring'
     ],
     recommended: true
   },
   {
     id: 'enterprise',
-    name: 'Enterprise Compliant',
-    description: 'For large organizations',
-    priceRange: '$6,000+',
+    name: 'ENTERPRISE',
+    description: 'Large organizations (250+ people), mission-critical',
+    priceRange: '$150-175/user/mo',
+    priceDetails: 'Custom pricing based on needs',
+    users: '250+ users',
+    sla: '30-second P1 (24/7)',
     features: [
-      'SOC 24×7 Monitoring',
-      'AI Threat Detection',
-      'Dedicated Account Manager',
-      'Custom IT Strategy',
-      'Compliance Management',
-      'White-glove Service'
+      'Dedicated operations team',
+      'SOC/NOC monitoring',
+      'Custom IT strategy',
+      'White-glove service',
+      'Enterprise-grade security'
     ],
     recommended: false
   }
